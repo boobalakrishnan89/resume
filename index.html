@@ -394,7 +394,7 @@
         /* ===== Print Styles — Single Page A4 ===== */
         @media print {
             @page {
-                margin: 0.15in 0.2in;
+                margin: 0.2in 0.25in;
                 size: A4;
             }
 
@@ -403,7 +403,7 @@
             body {
                 background: white;
                 padding: 0;
-                font-size: 7.5px;
+                font-size: 8.5px;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -414,7 +414,7 @@
             .resume {
                 box-shadow: none;
                 border-radius: 0;
-                grid-template-columns: 195px 1fr;
+                grid-template-columns: 215px 1fr;
                 min-height: auto;
             }
 
@@ -426,16 +426,16 @@
             }
 
             .monogram-header {
-                padding: 8px 8px 6px;
+                padding: 12px 10px 10px;
                 background: #2d2a4a !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
             .monogram {
-                width: 30px; height: 30px;
-                margin-bottom: 4px;
-                border-width: 1px;
+                width: 38px; height: 38px;
+                margin-bottom: 6px;
+                border-width: 1.5px;
                 border-radius: 2px;
                 background: rgba(102, 126, 234, 0.08) !important;
                 -webkit-print-color-adjust: exact;
@@ -447,71 +447,71 @@
                 border-radius: 3px;
             }
 
-            .monogram-text { font-size: 12px; color: #fff; }
-            .sidebar-name { font-size: 9.5px; color: #fff; letter-spacing: 1px; }
-            .sidebar-title { font-size: 7px; margin-top: 2px; color: #667eea; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .monogram-text { font-size: 15px; color: #fff; }
+            .sidebar-name { font-size: 11px; color: #fff; letter-spacing: 1px; }
+            .sidebar-title { font-size: 7.5px; margin-top: 3px; color: #667eea; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
             .contact-bar {
-                padding: 3px 6px;
-                gap: 1px 6px;
+                padding: 5px 8px;
+                gap: 2px 8px;
                 background: #eeeae5 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .contact-bar-item { font-size: 6px; gap: 2px; color: #5a5a5a; }
-            .contact-bar-item svg { width: 6px; height: 6px; stroke: #667eea; }
+            .contact-bar-item { font-size: 7px; gap: 3px; color: #5a5a5a; }
+            .contact-bar-item svg { width: 7px; height: 7px; stroke: #667eea; }
 
-            .sidebar-section { padding: 5px 8px; }
+            .sidebar-section { padding: 8px 12px; }
 
             .sidebar-section-title {
-                font-size: 6px;
-                margin-bottom: 3px;
-                padding-bottom: 2px;
+                font-size: 7px;
+                margin-bottom: 5px;
+                padding-bottom: 3px;
                 letter-spacing: 1.5px;
                 color: #2d2a4a;
                 border-bottom-color: #d4cfc9;
             }
 
-            .summary-text { font-size: 6.5px; line-height: 1.3; color: #5a5a5a; }
+            .summary-text { font-size: 7.5px; line-height: 1.4; color: #5a5a5a; }
             .summary-text strong { color: #2d2a4a; }
 
-            .edu-entry { margin-bottom: 3px; }
-            .edu-degree { font-size: 7px; color: #2d2a4a; }
-            .edu-field { font-size: 6.5px; margin-bottom: 0; color: #5a5a5a; }
-            .edu-meta { font-size: 6px; color: #667eea; }
+            .edu-entry { margin-bottom: 5px; }
+            .edu-degree { font-size: 8px; color: #2d2a4a; }
+            .edu-field { font-size: 7.5px; margin-bottom: 0; color: #5a5a5a; }
+            .edu-meta { font-size: 7px; color: #667eea; }
 
-            .skill-group { margin-bottom: 3px; }
-            .skill-group-title { font-size: 6px; margin-bottom: 0.5px; letter-spacing: 0.5px; color: #2d2a4a; }
-            .skill-group-items { font-size: 6.5px; line-height: 1.25; color: #5a5a5a; }
+            .skill-group { margin-bottom: 5px; }
+            .skill-group-title { font-size: 7px; margin-bottom: 1px; letter-spacing: 0.5px; color: #2d2a4a; }
+            .skill-group-items { font-size: 7.5px; line-height: 1.35; color: #5a5a5a; }
 
             /* Main content */
-            .main-content { padding: 6px 12px 8px; }
+            .main-content { padding: 10px 16px 12px; }
             .main-section { margin-bottom: 0; }
 
             .main-section-title {
-                font-size: 7px;
-                margin-bottom: 5px;
-                padding-bottom: 2px;
+                font-size: 8px;
+                margin-bottom: 8px;
+                padding-bottom: 3px;
                 letter-spacing: 2px;
                 border-bottom-width: 1.5px;
             }
 
             .exp-entry {
-                margin-bottom: 4px;
-                padding-bottom: 3px;
+                margin-bottom: 7px;
+                padding-bottom: 6px;
                 border-bottom-width: 0.5px;
             }
 
             .exp-entry:last-child { margin-bottom: 0; padding-bottom: 0; }
 
             .exp-title-row { margin-bottom: 0; }
-            .exp-role-title { font-size: 7.5px; }
-            .exp-date { font-size: 6px; color: #667eea; }
-            .exp-company { font-size: 7px; margin-bottom: 0; }
-            .exp-location { font-size: 6px; margin-bottom: 1px; }
+            .exp-role-title { font-size: 8.5px; }
+            .exp-date { font-size: 7px; color: #667eea; }
+            .exp-company { font-size: 8px; margin-bottom: 0; }
+            .exp-location { font-size: 7px; margin-bottom: 2px; }
             .exp-domain-tag {
-                font-size: 5.5px; padding: 0px 3px; margin-bottom: 2px;
+                font-size: 6px; padding: 1px 4px; margin-bottom: 3px;
                 background: #eef2ff !important;
                 color: #667eea;
                 -webkit-print-color-adjust: exact;
@@ -519,17 +519,17 @@
             }
 
             .exp-bullets li {
-                font-size: 6.5px;
-                line-height: 1.25;
-                margin-bottom: 0.3px;
-                padding-left: 7px;
+                font-size: 7.5px;
+                line-height: 1.3;
+                margin-bottom: 0.5px;
+                padding-left: 8px;
             }
 
-            .exp-bullets li::before { font-size: 6px; color: #667eea; }
+            .exp-bullets li::before { font-size: 7px; color: #667eea; }
 
             .achievements-box {
-                margin-top: 2px;
-                padding: 3px 5px;
+                margin-top: 3px;
+                padding: 4px 7px;
                 border-left-width: 2px;
                 border-radius: 0 3px 3px 0;
                 background: #faf5ff !important;
@@ -537,20 +537,20 @@
                 print-color-adjust: exact;
             }
 
-            .achievements-box-title { font-size: 5.5px; margin-bottom: 1px; letter-spacing: 0.8px; color: #667eea; }
+            .achievements-box-title { font-size: 6.5px; margin-bottom: 2px; letter-spacing: 0.8px; color: #667eea; }
 
             .achievements-box li {
-                font-size: 6px;
-                line-height: 1.2;
-                margin-bottom: 0.3px;
-                padding-left: 8px;
+                font-size: 7px;
+                line-height: 1.25;
+                margin-bottom: 0.5px;
+                padding-left: 9px;
             }
 
-            .achievements-box li::before { font-size: 5px; color: #667eea; }
+            .achievements-box li::before { font-size: 5.5px; color: #667eea; }
 
-            .exp-tools-row { margin-top: 2px; gap: 1px; }
+            .exp-tools-row { margin-top: 3px; gap: 1.5px; }
             .exp-tool {
-                font-size: 5.5px; padding: 0px 3px; border-radius: 1px;
+                font-size: 6px; padding: 1px 4px; border-radius: 1px;
                 background: #eef2ff !important;
                 color: #667eea;
                 -webkit-print-color-adjust: exact;
