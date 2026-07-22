@@ -7,27 +7,25 @@
     <meta name="description" content="Resume of BoobalaKrishnan Gopinathan — Senior QA Engineer & Lead QA with 10+ years of experience in Quality Assurance, Test Automation, and QA Leadership.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #e2e8f0;
-            color: #1e293b;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #2d3748;
             line-height: 1.55;
             -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            padding: 40px 20px;
         }
 
         /* ===== Print Button ===== */
         .print-controls {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 24px;
+            right: 24px;
             z-index: 100;
         }
 
@@ -35,113 +33,126 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 24px;
-            background: #1e293b;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
             border-radius: 50px;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
             transition: all 0.3s ease;
+            letter-spacing: 0.3px;
         }
 
         .btn-print:hover {
-            background: #0f172a;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.45);
         }
+
+        .btn-print svg { stroke: white; fill: none; }
 
         /* ===== Resume Container ===== */
         .resume-wrapper {
             max-width: 960px;
-            margin: 40px auto;
-            padding: 0 20px;
+            margin: 0 auto;
         }
 
         .resume {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 280px 1fr;
             background: #ffffff;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-            min-height: 100vh;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            overflow: hidden;
         }
 
         /* ===== LEFT SIDEBAR ===== */
         .sidebar {
-            background: #f1f5f9;
-            padding: 0;
-            border-right: 1px solid #e2e8f0;
+            background: #1b2438;
+            color: #c8d6e5;
         }
 
         /* Monogram Header */
         .monogram-header {
-            background: #1e293b;
-            padding: 36px 24px 28px;
+            background: linear-gradient(180deg, #0f1729 0%, #1b2438 100%);
+            padding: 32px 24px 24px;
             text-align: center;
         }
 
         .monogram {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 16px;
-            border: 2px solid #94a3b8;
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 14px;
+            border: 2px solid rgba(102, 126, 234, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            border-radius: 4px;
+            background: rgba(102, 126, 234, 0.08);
         }
 
         .monogram::before {
             content: '';
             position: absolute;
-            top: -6px;
-            left: -6px;
-            right: -6px;
-            bottom: -6px;
-            border: 1px solid #475569;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 6px;
         }
 
         .monogram-text {
-            font-size: 28px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 26px;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .sidebar-name {
-            font-size: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
             font-weight: 700;
             color: #ffffff;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        .sidebar-title {
+            font-size: 11px;
+            font-weight: 500;
+            color: #667eea;
             letter-spacing: 1px;
+            margin-top: 6px;
             text-transform: uppercase;
         }
 
         /* Contact Bar */
         .contact-bar {
-            padding: 14px 20px;
-            background: #e2e8f0;
+            padding: 12px 18px;
+            background: rgba(0, 0, 0, 0.15);
             display: flex;
             flex-wrap: wrap;
-            gap: 6px 16px;
+            gap: 5px 14px;
             justify-content: center;
-            border-bottom: 1px solid #cbd5e1;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
         .contact-bar-item {
-            font-size: 10.5px;
-            color: #475569;
+            font-size: 10px;
+            color: #8899b4;
             display: flex;
             align-items: center;
             gap: 5px;
         }
 
         .contact-bar-item svg {
-            width: 12px;
-            height: 12px;
-            stroke: #64748b;
+            width: 11px; height: 11px;
+            stroke: #667eea;
             fill: none;
             stroke-width: 2;
             stroke-linecap: round;
@@ -152,126 +163,94 @@
         .contact-bar-item a {
             color: inherit;
             text-decoration: none;
+            transition: color 0.2s;
         }
 
-        .contact-bar-item a:hover {
-            color: #0f172a;
-        }
+        .contact-bar-item a:hover { color: #ffffff; }
 
         /* Sidebar Sections */
         .sidebar-section {
-            padding: 20px 24px;
-            border-bottom: 1px solid #e2e8f0;
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .sidebar-section:last-child {
-            border-bottom: none;
-        }
+        .sidebar-section:last-child { border-bottom: none; }
 
         .sidebar-section-title {
-            font-size: 11px;
-            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #0f172a;
-            margin-bottom: 14px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #1e293b;
+            letter-spacing: 2.5px;
+            color: #667eea;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.25);
         }
 
-        /* Summary */
         .summary-text {
-            font-size: 12px;
-            line-height: 1.65;
-            color: #334155;
+            font-size: 11.5px;
+            line-height: 1.6;
+            color: #a0aec0;
         }
+
+        .summary-text strong { color: #e2e8f0; }
 
         /* Education */
-        .edu-entry {
-            margin-bottom: 12px;
-        }
-
-        .edu-entry:last-child {
-            margin-bottom: 0;
-        }
-
-        .edu-degree {
-            font-size: 12.5px;
-            font-weight: 700;
-            color: #0f172a;
-        }
-
-        .edu-field {
-            font-size: 11.5px;
-            color: #334155;
-        }
-
-        .edu-meta {
-            font-size: 11px;
-            color: #64748b;
-            margin-top: 2px;
-        }
+        .edu-entry { margin-bottom: 10px; }
+        .edu-entry:last-child { margin-bottom: 0; }
+        .edu-degree { font-size: 12px; font-weight: 700; color: #e2e8f0; }
+        .edu-field { font-size: 11px; color: #a0aec0; }
+        .edu-meta { font-size: 10px; color: #667eea; margin-top: 2px; }
 
         /* Skills */
-        .skill-group {
-            margin-bottom: 14px;
-        }
-
-        .skill-group:last-child {
-            margin-bottom: 0;
-        }
+        .skill-group { margin-bottom: 12px; }
+        .skill-group:last-child { margin-bottom: 0; }
 
         .skill-group-title {
-            font-size: 10.5px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 9.5px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            color: #334155;
-            margin-bottom: 6px;
+            color: #e2e8f0;
+            margin-bottom: 4px;
         }
 
         .skill-group-items {
-            font-size: 11px;
-            color: #475569;
-            line-height: 1.6;
+            font-size: 10.5px;
+            color: #8899b4;
+            line-height: 1.55;
         }
 
         /* ===== RIGHT MAIN CONTENT ===== */
         .main-content {
-            padding: 36px 36px 40px;
+            padding: 32px 32px 36px;
+            background: #ffffff;
         }
 
-        .main-section {
-            margin-bottom: 28px;
-        }
-
-        .main-section:last-child {
-            margin-bottom: 0;
-        }
+        .main-section { margin-bottom: 24px; }
+        .main-section:last-child { margin-bottom: 0; }
 
         .main-section-title {
+            font-family: 'Outfit', sans-serif;
             font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: #0f172a;
-            margin-bottom: 20px;
+            letter-spacing: 3px;
+            color: #1b2438;
+            margin-bottom: 18px;
             padding-bottom: 8px;
-            border-bottom: 2px solid #1e293b;
+            border-bottom: 2px solid #1b2438;
         }
 
         /* Experience Entry */
         .exp-entry {
-            margin-bottom: 24px;
-            padding-bottom: 24px;
-            border-bottom: 1px solid #f1f5f9;
+            margin-bottom: 22px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #edf2f7;
         }
-
-        .exp-entry:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
+        .exp-entry:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 
         .exp-title-row {
             display: flex;
@@ -279,108 +258,108 @@
             align-items: baseline;
             flex-wrap: wrap;
             gap: 4px;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .exp-role-title {
-            font-size: 13.5px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
             font-weight: 700;
-            color: #0f172a;
+            color: #1b2438;
         }
 
         .exp-date {
+            font-family: 'Outfit', sans-serif;
             font-size: 11px;
             font-weight: 600;
-            color: #64748b;
+            color: #667eea;
             white-space: nowrap;
         }
 
         .exp-company {
             font-size: 13px;
             font-weight: 600;
-            color: #334155;
-            margin-bottom: 2px;
+            color: #4a5568;
+            margin-bottom: 1px;
         }
 
         .exp-location {
             font-size: 11px;
-            color: #94a3b8;
-            margin-bottom: 8px;
+            color: #a0aec0;
+            margin-bottom: 6px;
         }
 
         .exp-domain-tag {
             display: inline-block;
-            font-size: 9.5px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 9px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: #475569;
-            background: #f1f5f9;
+            color: #667eea;
+            background: #eef2ff;
             padding: 2px 8px;
             border-radius: 3px;
-            margin-bottom: 10px;
-            border: 1px solid #e2e8f0;
+            margin-bottom: 8px;
         }
 
-        .exp-bullets {
-            list-style: none;
-            padding: 0;
-        }
+        .exp-bullets { list-style: none; padding: 0; }
 
         .exp-bullets li {
             position: relative;
             padding-left: 14px;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             font-size: 12px;
-            line-height: 1.55;
-            color: #334155;
+            line-height: 1.5;
+            color: #4a5568;
         }
 
         .exp-bullets li::before {
             content: '\2022';
             position: absolute;
             left: 0;
-            color: #1e293b;
+            color: #667eea;
             font-weight: 700;
         }
 
+        .exp-bullets li strong { color: #1b2438; }
+
         /* Achievements Box */
         .achievements-box {
-            margin-top: 10px;
-            padding: 12px 14px;
-            background: #f8fafc;
-            border-left: 3px solid #1e293b;
+            margin-top: 8px;
+            padding: 10px 14px;
+            background: linear-gradient(135deg, #faf5ff 0%, #eef2ff 100%);
+            border-left: 3px solid #667eea;
+            border-radius: 0 6px 6px 0;
         }
 
         .achievements-box-title {
-            font-size: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 9px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #1e293b;
-            margin-bottom: 6px;
+            letter-spacing: 1.5px;
+            color: #667eea;
+            margin-bottom: 5px;
         }
 
-        .achievements-box ul {
-            list-style: none;
-            padding: 0;
-        }
+        .achievements-box ul { list-style: none; padding: 0; }
 
         .achievements-box li {
             position: relative;
             padding-left: 14px;
-            margin-bottom: 4px;
-            font-size: 11.5px;
-            line-height: 1.5;
-            color: #334155;
+            margin-bottom: 3px;
+            font-size: 11px;
+            line-height: 1.45;
+            color: #4a5568;
         }
 
         .achievements-box li::before {
             content: '\2605';
             position: absolute;
             left: 0;
-            color: #475569;
-            font-size: 9px;
+            color: #667eea;
+            font-size: 8px;
             top: 2px;
         }
 
@@ -393,239 +372,199 @@
         }
 
         .exp-tool {
-            font-size: 9.5px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 9px;
             font-weight: 500;
-            color: #64748b;
-            background: #f8fafc;
+            color: #667eea;
+            background: #eef2ff;
             padding: 2px 7px;
             border-radius: 3px;
-            border: 1px solid #e2e8f0;
-        }
-
-        /* Automation & AI tag highlights */
-        .exp-bullets li strong:first-child {
-            font-size: 10px;
-            letter-spacing: 0.3px;
         }
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
-            .resume {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                border-right: none;
-                border-bottom: 1px solid #e2e8f0;
-            }
-            .resume-wrapper {
-                padding: 16px 8px;
-                margin: 16px auto;
-            }
+            .resume { grid-template-columns: 1fr; }
+            .sidebar { border-right: none; }
+            .resume-wrapper { padding: 16px 8px; }
+            body { padding: 16px 8px; }
             .print-controls { top: 10px; right: 10px; }
         }
 
         /* ===== Print Styles — Single Page A4 ===== */
         @media print {
             @page {
-                margin: 0.2in 0.25in;
+                margin: 0.15in 0.2in;
                 size: A4;
             }
 
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
+            * { animation: none !important; transition: none !important; }
 
             body {
                 background: white;
-                font-size: 8px;
+                padding: 0;
+                font-size: 7.5px;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
             .print-controls { display: none !important; }
-
-            .resume-wrapper {
-                padding: 0;
-                margin: 0;
-                max-width: 100%;
-            }
+            .resume-wrapper { padding: 0; margin: 0; max-width: 100%; }
 
             .resume {
                 box-shadow: none;
-                grid-template-columns: 210px 1fr;
+                border-radius: 0;
+                grid-template-columns: 195px 1fr;
                 min-height: auto;
             }
 
-            /* --- Sidebar compact --- */
+            /* Sidebar */
+            .sidebar {
+                background: #1b2438 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
             .monogram-header {
-                padding: 10px 10px 8px;
-                background: #1e293b !important;
+                padding: 8px 8px 6px;
+                background: #0f1729 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
             .monogram {
-                width: 36px;
-                height: 36px;
-                margin-bottom: 5px;
-                border-width: 1.5px;
+                width: 30px; height: 30px;
+                margin-bottom: 4px;
+                border-width: 1px;
+                border-radius: 2px;
+                background: rgba(102, 126, 234, 0.08) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
             .monogram::before {
-                top: -3px;
-                left: -3px;
-                right: -3px;
-                bottom: -3px;
+                top: -3px; left: -3px; right: -3px; bottom: -3px;
+                border-radius: 3px;
             }
 
-            .monogram-text {
-                font-size: 14px;
-                color: #ffffff;
-            }
-
-            .sidebar-name {
-                font-size: 11px;
-                color: #ffffff;
-                letter-spacing: 0.5px;
-            }
+            .monogram-text { font-size: 12px; color: #fff; }
+            .sidebar-name { font-size: 9.5px; color: #fff; letter-spacing: 1px; }
+            .sidebar-title { font-size: 7px; margin-top: 2px; color: #667eea; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 
             .contact-bar {
-                padding: 4px 8px;
-                gap: 1px 8px;
-                background: #e2e8f0 !important;
+                padding: 3px 6px;
+                gap: 1px 6px;
+                background: rgba(0,0,0,0.15) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            .contact-bar-item {
-                font-size: 7px;
-                gap: 3px;
-            }
+            .contact-bar-item { font-size: 6px; gap: 2px; color: #8899b4; }
+            .contact-bar-item svg { width: 6px; height: 6px; stroke: #667eea; }
 
-            .contact-bar-item svg {
-                width: 8px;
-                height: 8px;
-            }
-
-            .sidebar {
-                background: #f1f5f9 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .sidebar-section {
-                padding: 6px 10px;
-            }
+            .sidebar-section { padding: 5px 8px; }
 
             .sidebar-section-title {
-                font-size: 7px;
-                margin-bottom: 4px;
+                font-size: 6px;
+                margin-bottom: 3px;
                 padding-bottom: 2px;
                 letter-spacing: 1.5px;
-                border-bottom-width: 1.5px;
+                color: #667eea;
+                border-bottom-color: rgba(102, 126, 234, 0.25);
             }
 
-            .summary-text {
-                font-size: 7.5px;
-                line-height: 1.35;
-            }
+            .summary-text { font-size: 6.5px; line-height: 1.3; color: #a0aec0; }
+            .summary-text strong { color: #e2e8f0; }
 
-            .edu-entry { margin-bottom: 4px; }
-            .edu-degree { font-size: 8px; }
-            .edu-field { font-size: 7.5px; margin-bottom: 0; }
-            .edu-meta { font-size: 7px; }
+            .edu-entry { margin-bottom: 3px; }
+            .edu-degree { font-size: 7px; color: #e2e8f0; }
+            .edu-field { font-size: 6.5px; margin-bottom: 0; color: #a0aec0; }
+            .edu-meta { font-size: 6px; color: #667eea; }
 
-            .skill-group { margin-bottom: 4px; }
-            .skill-group-title { font-size: 7px; margin-bottom: 1px; letter-spacing: 0.5px; }
-            .skill-group-items { font-size: 7.5px; line-height: 1.3; }
+            .skill-group { margin-bottom: 3px; }
+            .skill-group-title { font-size: 6px; margin-bottom: 0.5px; letter-spacing: 0.5px; color: #e2e8f0; }
+            .skill-group-items { font-size: 6.5px; line-height: 1.25; color: #8899b4; }
 
-            /* --- Main content compact --- */
-            .main-content {
-                padding: 8px 14px 10px;
-            }
-
-            .main-section {
-                margin-bottom: 0;
-            }
+            /* Main content */
+            .main-content { padding: 6px 12px 8px; }
+            .main-section { margin-bottom: 0; }
 
             .main-section-title {
-                font-size: 8px;
-                margin-bottom: 6px;
-                padding-bottom: 3px;
+                font-size: 7px;
+                margin-bottom: 5px;
+                padding-bottom: 2px;
                 letter-spacing: 2px;
                 border-bottom-width: 1.5px;
             }
 
             .exp-entry {
-                margin-bottom: 6px;
-                padding-bottom: 5px;
+                margin-bottom: 4px;
+                padding-bottom: 3px;
                 border-bottom-width: 0.5px;
             }
 
-            .exp-entry:last-child {
-                margin-bottom: 0;
-                padding-bottom: 0;
-            }
+            .exp-entry:last-child { margin-bottom: 0; padding-bottom: 0; }
 
             .exp-title-row { margin-bottom: 0; }
-            .exp-role-title { font-size: 8.5px; }
-            .exp-date { font-size: 7px; }
-            .exp-company { font-size: 8px; margin-bottom: 0; }
-            .exp-location { font-size: 7px; margin-bottom: 2px; }
-            .exp-domain-tag { font-size: 6.5px; padding: 0px 4px; margin-bottom: 3px; }
+            .exp-role-title { font-size: 7.5px; }
+            .exp-date { font-size: 6px; color: #667eea; }
+            .exp-company { font-size: 7px; margin-bottom: 0; }
+            .exp-location { font-size: 6px; margin-bottom: 1px; }
+            .exp-domain-tag {
+                font-size: 5.5px; padding: 0px 3px; margin-bottom: 2px;
+                background: #eef2ff !important;
+                color: #667eea;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
 
             .exp-bullets li {
-                font-size: 7.5px;
-                line-height: 1.3;
-                margin-bottom: 0.5px;
+                font-size: 6.5px;
+                line-height: 1.25;
+                margin-bottom: 0.3px;
+                padding-left: 7px;
+            }
+
+            .exp-bullets li::before { font-size: 6px; color: #667eea; }
+
+            .achievements-box {
+                margin-top: 2px;
+                padding: 3px 5px;
+                border-left-width: 2px;
+                border-radius: 0 3px 3px 0;
+                background: #faf5ff !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .achievements-box-title { font-size: 5.5px; margin-bottom: 1px; letter-spacing: 0.8px; color: #667eea; }
+
+            .achievements-box li {
+                font-size: 6px;
+                line-height: 1.2;
+                margin-bottom: 0.3px;
                 padding-left: 8px;
             }
 
-            .exp-bullets li::before {
-                font-size: 7px;
+            .achievements-box li::before { font-size: 5px; color: #667eea; }
+
+            .exp-tools-row { margin-top: 2px; gap: 1px; }
+            .exp-tool {
+                font-size: 5.5px; padding: 0px 3px; border-radius: 1px;
+                background: #eef2ff !important;
+                color: #667eea;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
 
-            .achievements-box {
-                margin-top: 3px;
-                padding: 4px 6px;
-                border-left-width: 2px;
-            }
-
-            .achievements-box-title {
-                font-size: 6.5px;
-                margin-bottom: 2px;
-                letter-spacing: 0.8px;
-            }
-
-            .achievements-box li {
-                font-size: 7px;
-                line-height: 1.25;
-                margin-bottom: 0.5px;
-                padding-left: 9px;
-            }
-
-            .achievements-box li::before {
-                font-size: 6px;
-            }
-
-            .exp-tools-row { margin-top: 3px; gap: 1.5px; }
-            .exp-tool { font-size: 6.5px; padding: 0px 3px; border-radius: 2px; }
-
-            /* No page breaks */
-            .exp-entry, .section, .sidebar-section {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
+            .exp-entry, .sidebar-section { break-inside: avoid; page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Print Button -->
     <div class="print-controls">
         <button class="btn-print" onclick="window.print()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
             Download PDF
         </button>
     </div>
@@ -636,15 +575,14 @@
             <!-- ===== LEFT SIDEBAR ===== -->
             <aside class="sidebar">
 
-                <!-- Monogram + Name -->
                 <div class="monogram-header">
                     <div class="monogram">
                         <span class="monogram-text">BG</span>
                     </div>
                     <div class="sidebar-name">BoobalaKrishnan<br>Gopinathan</div>
+                    <div class="sidebar-title">Senior QA Engineer &middot; Lead QA</div>
                 </div>
 
-                <!-- Contact Bar -->
                 <div class="contact-bar">
                     <div class="contact-bar-item">
                         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -672,7 +610,6 @@
                     </div>
                 </div>
 
-                <!-- Professional Summary -->
                 <div class="sidebar-section">
                     <div class="sidebar-section-title">Professional Summary</div>
                     <div class="summary-text">
@@ -680,7 +617,6 @@
                     </div>
                 </div>
 
-                <!-- Education -->
                 <div class="sidebar-section">
                     <div class="sidebar-section-title">Education</div>
                     <div class="edu-entry">
@@ -695,45 +631,36 @@
                     </div>
                 </div>
 
-                <!-- Skill Profile -->
                 <div class="sidebar-section">
                     <div class="sidebar-section-title">Skill Profile</div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">Test Management Tools:</div>
                         <div class="skill-group-items">JIRA, Azure Test Plans</div>
                     </div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">AI Testing Tools:</div>
                         <div class="skill-group-items">Claude (Antigravity), GitHub Copilot, ChatGPT, Gemini AI</div>
                     </div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">Automation Tools:</div>
                         <div class="skill-group-items">Playwright, Selenium WebDriver, Appium, RestAssured, TestNG, Maven, CI/CD</div>
                     </div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">API Testing Tools:</div>
                         <div class="skill-group-items">Postman, Swagger, RestAssured</div>
                     </div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">Database:</div>
                         <div class="skill-group-items">MongoDB, MySQL, PostgreSQL</div>
                     </div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">Debugging & Performance:</div>
                         <div class="skill-group-items">Proxyman, DevTools (Chrome/Firefox), Kibana Logs, CleverTap, Loggly</div>
                     </div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">Mobile Testing Tools:</div>
                         <div class="skill-group-items">Android Studio, BrowserStack, TestFlight</div>
                     </div>
-
                     <div class="skill-group">
                         <div class="skill-group-title">Cloud & Infra:</div>
                         <div class="skill-group-items">AWS, GitHub, Eclipse IDE, Antigravity, Antigravity IDE</div>
@@ -891,7 +818,6 @@
                     </div>
 
                 </section>
-
             </main>
 
         </div>
