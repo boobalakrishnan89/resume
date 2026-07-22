@@ -386,9 +386,41 @@
         @media (max-width: 768px) {
             .resume { grid-template-columns: 1fr; }
             .sidebar { border-right: none; }
-            .resume-wrapper { padding: 16px 8px; }
-            body { padding: 16px 8px; }
+            .resume-wrapper { padding: 12px 6px; }
+            body { padding: 12px 6px; font-size: 14px; }
             .print-controls { top: 10px; right: 10px; }
+
+            .monogram-header { padding: 24px 20px 20px; }
+            .monogram { width: 60px; height: 60px; }
+            .monogram-text { font-size: 24px; }
+            .sidebar-name { font-size: 18px; }
+            .sidebar-title { font-size: 12px; }
+
+            .contact-bar { padding: 10px 14px; gap: 6px 12px; }
+            .contact-bar-item { font-size: 12px; }
+            .contact-bar-item svg { width: 12px; height: 12px; }
+
+            .sidebar-section { padding: 16px 18px; }
+            .sidebar-section-title { font-size: 11px; margin-bottom: 10px; }
+            .summary-text { font-size: 13px; line-height: 1.6; }
+
+            .edu-degree { font-size: 14px; }
+            .edu-field { font-size: 13px; }
+            .edu-meta { font-size: 12px; }
+
+            .skill-group-title { font-size: 11px; }
+            .skill-group-items { font-size: 13px; line-height: 1.6; }
+
+            .main-content { padding: 20px 16px; }
+            .main-section-title { font-size: 14px; margin-bottom: 16px; }
+            .exp-role-title { font-size: 16px; }
+            .exp-date { font-size: 12px; }
+            .exp-company { font-size: 14px; }
+            .exp-location { font-size: 12px; }
+            .exp-domain-tag { font-size: 10px; }
+            .exp-bullets li { font-size: 13px; line-height: 1.55; padding-left: 14px; }
+            .achievements-box li { font-size: 12px; line-height: 1.5; }
+            .exp-tool { font-size: 10px; }
         }
 
         /* ===== Print Styles — Single Page A4 ===== */
@@ -409,13 +441,15 @@
             }
 
             .print-controls { display: none !important; }
-            .resume-wrapper { padding: 0; margin: 0; max-width: 100%; }
+            .resume-wrapper { padding: 0; margin: 0; max-width: 100%; overflow: hidden; }
 
             .resume {
                 box-shadow: none;
                 border-radius: 0;
                 grid-template-columns: 225px 1fr;
                 min-height: auto;
+                max-height: 100vh;
+                overflow: hidden;
             }
 
             /* Sidebar */
