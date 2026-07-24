@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoobalaKrishnan Gopinathan — Senior QA Engineer / Lead QA</title>
-    <meta name="description" content="Resume of BoobalaKrishnan Gopinathan — Senior QA Engineer & Lead QA with 10+ years of experience in Quality Assurance, Test Automation, and QA Leadership.">
+    <title>Soumya Ranjan Nayak — Senior QA Automation & DevOps Engineer</title>
+    <meta name="description" content="ATS-Friendly Resume of Soumya Ranjan Nayak — Senior QA Automation & DevOps Engineer with 5+ years of experience in test automation, CI/CD pipelines, and DevOps.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #2d3748;
-            line-height: 1.55;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.5;
+            background: #f0f0f0;
+            padding: 20px;
             -webkit-font-smoothing: antialiased;
-            min-height: 100vh;
-            padding: 40px 20px;
         }
 
         /* ===== Print Button ===== */
         .print-controls {
             position: fixed;
-            top: 24px;
-            right: 24px;
+            top: 20px;
+            right: 20px;
             z-index: 100;
         }
 
@@ -33,400 +32,216 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 14px 28px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 12px 24px;
+            background: #2563eb;
             color: white;
             border: none;
-            border-radius: 50px;
-            font-family: 'Outfit', sans-serif;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.35);
-            transition: all 0.3s ease;
-            letter-spacing: 0.3px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            transition: all 0.2s ease;
         }
 
         .btn-print:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.45);
+            background: #1d4ed8;
+            transform: translateY(-1px);
         }
 
         .btn-print svg { stroke: white; fill: none; }
 
         /* ===== Resume Container ===== */
-        .resume-wrapper {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
         .resume {
-            display: grid;
-            grid-template-columns: 280px 1fr;
+            max-width: 800px;
+            margin: 0 auto;
             background: #ffffff;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
-            overflow: hidden;
+            padding: 44px 48px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
         }
 
-        /* ===== LEFT SIDEBAR ===== */
-        .sidebar {
-            background: #f7f5f2;
-            color: #3d3d3d;
-            border-right: 1px solid #e8e4df;
-        }
-
-        /* Monogram Header */
-        .monogram-header {
-            background: #2d2a4a;
-            padding: 32px 24px 24px;
+        /* ===== HEADER ===== */
+        .header {
             text-align: center;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 2px solid #1a1a1a;
         }
 
-        .monogram {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 14px;
-            border: 2px solid rgba(102, 126, 234, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .monogram::before {
-            content: '';
-            position: absolute;
-            top: -5px; left: -5px; right: -5px; bottom: -5px;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-            border-radius: 6px;
-        }
-
-        .monogram-text {
-            font-family: 'Outfit', sans-serif;
+        h1 {
             font-size: 26px;
             font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 3px;
-        }
-
-        .sidebar-name {
-            font-family: 'Outfit', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            line-height: 1.3;
-        }
-
-        .sidebar-title {
-            font-size: 11px;
-            font-weight: 500;
-            color: #667eea;
+            color: #1a1a1a;
             letter-spacing: 1px;
-            margin-top: 6px;
             text-transform: uppercase;
-        }
-
-        /* Contact Bar */
-        .contact-bar {
-            padding: 12px 18px;
-            background: #eeeae5;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 5px 14px;
-            justify-content: center;
-            border-top: 1px solid #e0dbd5;
-            border-bottom: 1px solid #e0dbd5;
-        }
-
-        .contact-bar-item {
-            font-size: 10px;
-            color: #5a5a5a;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .contact-bar-item svg {
-            width: 11px; height: 11px;
-            stroke: #667eea;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            flex-shrink: 0;
-        }
-
-        .contact-bar-item a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .contact-bar-item a:hover { color: #2d2a4a; }
-
-        /* Sidebar Sections */
-        .sidebar-section {
-            padding: 18px 22px;
-            border-bottom: 1px solid #e8e4df;
-        }
-
-        .sidebar-section:last-child { border-bottom: none; }
-
-        .sidebar-section-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: #2d2a4a;
-            margin-bottom: 12px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #d4cfc9;
-        }
-
-        .summary-text {
-            font-size: 11.5px;
-            line-height: 1.6;
-            color: #5a5a5a;
-        }
-
-        .summary-text strong { color: #2d2a4a; }
-
-        /* Education */
-        .edu-entry { margin-bottom: 10px; }
-        .edu-entry:last-child { margin-bottom: 0; }
-        .edu-degree { font-size: 12px; font-weight: 700; color: #2d2a4a; }
-        .edu-field { font-size: 11px; color: #5a5a5a; }
-        .edu-meta { font-size: 10px; color: #667eea; margin-top: 2px; }
-
-        /* Skills */
-        .skill-group { margin-bottom: 12px; }
-        .skill-group:last-child { margin-bottom: 0; }
-
-        .skill-group-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 9.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #2d2a4a;
             margin-bottom: 4px;
         }
 
-        .skill-group-items {
-            font-size: 10.5px;
-            color: #5a5a5a;
-            line-height: 1.55;
+        .header-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2563eb;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
         }
 
-        /* ===== RIGHT MAIN CONTENT ===== */
-        .main-content {
-            padding: 32px 32px 36px;
-            background: #ffffff;
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            font-size: 12px;
+            color: #444;
         }
 
-        .main-section { margin-bottom: 24px; }
-        .main-section:last-child { margin-bottom: 0; }
+        .contact-row a {
+            color: #444;
+            text-decoration: none;
+        }
 
-        .main-section-title {
-            font-family: 'Outfit', sans-serif;
+        .divider { color: #ccc; }
+
+        /* ===== SECTIONS ===== */
+        h2 {
             font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #1b2438;
-            margin-bottom: 18px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #1b2438;
+            letter-spacing: 2.5px;
+            color: #1a1a1a;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1.5px solid #1a1a1a;
         }
 
-        /* Experience Entry */
+        /* ===== SUMMARY ===== */
+        .summary {
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 24px;
+        }
+
+        .skill-row {
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        .skill-label {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .skill-value {
+            color: #444;
+        }
+
+        /* ===== EXPERIENCE ===== */
         .exp-entry {
-            margin-bottom: 22px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #edf2f7;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e5e5e5;
         }
-        .exp-entry:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 
-        .exp-title-row {
+        .exp-entry:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .exp-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 4px;
             margin-bottom: 1px;
         }
 
-        .exp-role-title {
-            font-family: 'Outfit', sans-serif;
+        h3 {
             font-size: 14px;
             font-weight: 700;
-            color: #1b2438;
+            color: #1a1a1a;
         }
 
         .exp-date {
-            font-family: 'Outfit', sans-serif;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
-            color: #667eea;
-            white-space: nowrap;
+            color: #2563eb;
         }
 
         .exp-company {
             font-size: 13px;
             font-weight: 600;
-            color: #4a5568;
-            margin-bottom: 1px;
+            color: #444;
         }
 
         .exp-location {
             font-size: 11px;
-            color: #a0aec0;
+            color: #888;
             margin-bottom: 6px;
         }
 
-        .exp-domain-tag {
-            display: inline-block;
-            font-family: 'Outfit', sans-serif;
-            font-size: 9px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: #667eea;
-            background: #eef2ff;
-            padding: 2px 8px;
-            border-radius: 3px;
-            margin-bottom: 8px;
+        ul {
+            list-style: disc;
+            padding-left: 20px;
         }
 
-        .exp-bullets { list-style: none; padding: 0; }
-
-        .exp-bullets li {
-            position: relative;
-            padding-left: 14px;
-            margin-bottom: 4px;
+        li {
             font-size: 12px;
-            line-height: 1.5;
-            color: #4a5568;
+            line-height: 1.55;
+            color: #333;
+            margin-bottom: 4px;
         }
 
-        .exp-bullets li::before {
-            content: '\2022';
-            position: absolute;
-            left: 0;
-            color: #667eea;
+        li strong { color: #1a1a1a; }
+
+        /* ===== EDUCATION ===== */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+        }
+
+        .edu-entry { }
+
+        .edu-degree {
+            font-size: 13px;
             font-weight: 700;
+            color: #1a1a1a;
         }
 
-        .exp-bullets li strong { color: #1b2438; }
-
-        /* Achievements Box */
-        .achievements-box {
-            margin-top: 8px;
-            padding: 10px 14px;
-            background: linear-gradient(135deg, #faf5ff 0%, #eef2ff 100%);
-            border-left: 3px solid #667eea;
-            border-radius: 0 6px 6px 0;
+        .edu-field {
+            font-size: 12px;
+            color: #444;
         }
 
-        .achievements-box-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 9px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #667eea;
-            margin-bottom: 5px;
-        }
-
-        .achievements-box ul { list-style: none; padding: 0; }
-
-        .achievements-box li {
-            position: relative;
-            padding-left: 14px;
-            margin-bottom: 3px;
+        .edu-meta {
             font-size: 11px;
-            line-height: 1.45;
-            color: #4a5568;
-        }
-
-        .achievements-box li::before {
-            content: '\2605';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-size: 8px;
-            top: 2px;
-        }
-
-        /* Tools row */
-        .exp-tools-row {
-            margin-top: 8px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4px;
-        }
-
-        .exp-tool {
-            font-family: 'Outfit', sans-serif;
-            font-size: 9px;
-            font-weight: 500;
-            color: #667eea;
-            background: #eef2ff;
-            padding: 2px 7px;
-            border-radius: 3px;
+            color: #2563eb;
         }
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
-            .resume { grid-template-columns: 1fr; }
-            .sidebar { border-right: none; }
-            .resume-wrapper { padding: 12px 6px; }
-            body { padding: 12px 6px; font-size: 14px; }
-            .print-controls { top: 10px; right: 10px; }
-
-            .monogram-header { padding: 24px 20px 20px; }
-            .monogram { width: 60px; height: 60px; }
-            .monogram-text { font-size: 24px; }
-            .sidebar-name { font-size: 18px; }
-            .sidebar-title { font-size: 12px; }
-
-            .contact-bar { padding: 10px 14px; gap: 6px 12px; }
-            .contact-bar-item { font-size: 12px; }
-            .contact-bar-item svg { width: 12px; height: 12px; }
-
-            .sidebar-section { padding: 16px 18px; }
-            .sidebar-section-title { font-size: 11px; margin-bottom: 10px; }
-            .summary-text { font-size: 13px; line-height: 1.6; }
-
-            .edu-degree { font-size: 14px; }
-            .edu-field { font-size: 13px; }
-            .edu-meta { font-size: 12px; }
-
-            .skill-group-title { font-size: 11px; }
-            .skill-group-items { font-size: 13px; line-height: 1.6; }
-
-            .main-content { padding: 20px 16px; }
-            .main-section-title { font-size: 14px; margin-bottom: 16px; }
-            .exp-role-title { font-size: 16px; }
-            .exp-date { font-size: 12px; }
-            .exp-company { font-size: 14px; }
-            .exp-location { font-size: 12px; }
-            .exp-domain-tag { font-size: 10px; }
-            .exp-bullets li { font-size: 13px; line-height: 1.55; padding-left: 14px; }
-            .achievements-box li { font-size: 12px; line-height: 1.5; }
-            .exp-tool { font-size: 10px; }
+            body { padding: 10px 6px; }
+            .resume { padding: 24px 20px; }
+            h1 { font-size: 22px; }
+            .contact-row { flex-direction: column; gap: 4px; align-items: center; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .exp-header { flex-direction: column; }
         }
 
         /* ===== Print Styles — Single Page A4 ===== */
         @media print {
             @page {
-                margin: 0.2in 0.25in;
+                margin: 0.2in 0.3in;
                 size: A4;
             }
 
@@ -435,170 +250,68 @@
             html, body {
                 height: auto !important;
                 min-height: 0 !important;
-                max-height: none;
-                overflow: visible;
                 margin: 0 !important;
                 padding: 0 !important;
+                background: white;
             }
 
-            body {
-                background: white;
-                font-size: 9.5px;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+            body { font-size: 8px; }
 
             .print-controls { display: none !important; }
-            .resume-wrapper { padding: 0; margin: 0; max-width: 100%; overflow: hidden; }
 
             .resume {
+                max-width: 100%;
+                padding: 0;
                 box-shadow: none;
-                border-radius: 0;
-                grid-template-columns: 225px 1fr;
-                min-height: auto;
-                overflow: hidden;
+                margin: 0;
             }
 
-            /* Sidebar */
-            .sidebar {
-                background: #f7f5f2 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .monogram-header {
-                padding: 14px 10px 12px;
-                background: #2d2a4a !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .monogram {
-                width: 42px; height: 42px;
+            .header {
                 margin-bottom: 6px;
-                border-width: 1.5px;
-                border-radius: 2px;
-                background: rgba(102, 126, 234, 0.08) !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .monogram::before {
-                top: -3px; left: -3px; right: -3px; bottom: -3px;
-                border-radius: 3px;
-            }
-
-            .monogram-text { font-size: 16px; color: #fff; }
-            .sidebar-name { font-size: 12px; color: #fff; letter-spacing: 1px; }
-            .sidebar-title { font-size: 8.5px; margin-top: 3px; color: #667eea; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-
-            .contact-bar {
-                padding: 6px 9px;
-                gap: 2px 9px;
-                background: #eeeae5 !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .contact-bar-item { font-size: 8px; gap: 3px; color: #5a5a5a; }
-            .contact-bar-item svg { width: 8px; height: 8px; stroke: #667eea; }
-
-            .sidebar-section { padding: 12px 12px; }
-
-            .sidebar-section-title {
-                font-size: 8px;
-                margin-bottom: 8px;
                 padding-bottom: 5px;
-                letter-spacing: 1.5px;
-                color: #2d2a4a;
-                border-bottom-color: #d4cfc9;
             }
 
-            .summary-text { font-size: 8.5px; line-height: 1.5; color: #5a5a5a; }
-            .summary-text strong { color: #2d2a4a; }
+            h1 { font-size: 15px; margin-bottom: 1px; }
+            .header-title { font-size: 8.5px; margin-bottom: 4px; }
+            .contact-row { font-size: 7.5px; gap: 2px 10px; }
 
-            .edu-entry { margin-bottom: 8px; }
-            .edu-degree { font-size: 9px; color: #2d2a4a; }
-            .edu-field { font-size: 8.5px; margin-bottom: 0; color: #5a5a5a; }
-            .edu-meta { font-size: 8px; color: #667eea; }
-
-            .skill-group { margin-bottom: 8px; }
-            .skill-group-title { font-size: 8px; margin-bottom: 2px; letter-spacing: 0.5px; color: #2d2a4a; }
-            .skill-group-items { font-size: 8.5px; line-height: 1.45; color: #5a5a5a; }
-
-            /* Main content */
-            .main-content { padding: 14px 14px 14px; }
-            .main-section { margin-bottom: 0; }
-
-            .main-section-title {
-                font-size: 9px;
-                margin-bottom: 8px;
-                padding-bottom: 3px;
+            h2 {
+                font-size: 7.5px;
+                margin-top: 6px;
+                margin-bottom: 3px;
+                padding-bottom: 2px;
                 letter-spacing: 2px;
-                border-bottom-width: 1.5px;
             }
+
+            .summary { font-size: 7.5px; line-height: 1.35; }
+
+            .skills-grid { gap: 1px 14px; }
+            .skill-row { font-size: 7.5px; line-height: 1.35; }
 
             .exp-entry {
-                margin-bottom: 10px;
-                padding-bottom: 8px;
-                border-bottom-width: 0.5px;
+                margin-bottom: 5px;
+                padding-bottom: 4px;
             }
 
-            .exp-entry:last-child { margin-bottom: 0; padding-bottom: 0; }
+            h3 { font-size: 9px; }
+            .exp-date { font-size: 7px; }
+            .exp-company { font-size: 8px; }
+            .exp-location { font-size: 6.5px; margin-bottom: 2px; }
 
-            .exp-title-row { margin-bottom: 1px; }
-            .exp-role-title { font-size: 9.5px; }
-            .exp-date { font-size: 7.5px; color: #667eea; }
-            .exp-company { font-size: 8.5px; margin-bottom: 1px; }
-            .exp-location { font-size: 7px; margin-bottom: 3px; }
-            .exp-domain-tag {
-                font-size: 7px; padding: 1px 4px; margin-bottom: 3px;
-                background: #eef2ff !important;
-                color: #667eea;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
+            ul { padding-left: 12px; }
 
-            .exp-bullets li {
-                font-size: 8px;
-                line-height: 1.4;
-                margin-bottom: 1px;
-                padding-left: 8px;
-            }
-
-            .exp-bullets li::before { font-size: 6px; color: #667eea; top: 0; }
-
-            .achievements-box {
-                margin-top: 6px;
-                padding: 6px 9px;
-                border-left-width: 2px;
-                border-radius: 0 3px 3px 0;
-                background: #faf5ff !important;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .achievements-box-title { font-size: 7px; margin-bottom: 3px; letter-spacing: 0.8px; color: #667eea; }
-
-            .achievements-box li {
+            li {
                 font-size: 7.5px;
-                line-height: 1.3;
-                margin-bottom: 1px;
-                padding-left: 8px;
+                line-height: 1.25;
+                margin-bottom: 0;
             }
 
-            .achievements-box li::before { font-size: 5px; color: #667eea; top: 1px; }
+            .edu-grid { gap: 6px; }
+            .edu-degree { font-size: 8.5px; }
+            .edu-field { font-size: 7.5px; }
+            .edu-meta { font-size: 7px; }
 
-            .exp-tools-row { margin-top: 5px; gap: 2.5px; }
-            .exp-tool {
-                font-size: 6.5px; padding: 1px 4px; border-radius: 1px;
-                background: #eef2ff !important;
-                color: #667eea;
-                -webkit-print-color-adjust: exact;
-                print-color-adjust: exact;
-            }
-
-            .exp-entry, .sidebar-section { break-inside: avoid; page-break-inside: avoid; }
+            .exp-entry, .edu-entry { break-inside: avoid; page-break-inside: avoid; }
         }
     </style>
 </head>
@@ -611,258 +324,136 @@
         </button>
     </div>
 
-    <div class="resume-wrapper">
-        <div class="resume">
+    <div class="resume">
 
-            <!-- ===== LEFT SIDEBAR ===== -->
-            <aside class="sidebar">
+        <!-- ===== HEADER ===== -->
+        <header class="header">
+            <h1>Soumya Ranjan Nayak</h1>
+            <div class="header-title">Senior QA Automation & DevOps Engineer</div>
+            <div class="contact-row">
+                <span>Bengaluru, India 560037</span>
+                <span class="divider">|</span>
+                <span>+91 9938821584</span>
+                <span class="divider">|</span>
+                <a href="mailto:soumyaranjannayak708@gmail.com">soumyaranjannayak708@gmail.com</a>
+                <span class="divider">|</span>
+                <a href="https://linkedin.com/in/soumya-ranjan-nayak-954a18162/" target="_blank">LinkedIn</a>
+            </div>
+        </header>
 
-                <div class="monogram-header">
-                    <div class="monogram">
-                        <span class="monogram-text">BG</span>
-                    </div>
-                    <div class="sidebar-name">BoobalaKrishnan<br>Gopinathan</div>
-                    <div class="sidebar-title">Senior QA Engineer &middot; Lead QA</div>
+        <!-- ===== SUMMARY ===== -->
+        <section>
+            <h2>Summary</h2>
+            <p class="summary">
+                Highly accomplished Senior QA Automation Engineer with over <strong>5 years</strong> of extensive experience specializing in designing, developing, and scaling robust automated testing frameworks across <strong>API, Backend, Web, and Mobile (iOS & Android)</strong> platforms. Proven expertise in building modern, end-to-end automation suites utilizing <strong>Playwright, Java, TestNG, JUnit, Cucumber, TDD framework, Spring framework, REST Assured, Appium, and Selenium WebDriver</strong>. Expert in engineering robust <strong>DevOps CI/CD pipelines</strong> using <strong>Jenkins, Ansible, GitHub, and ArgoCD</strong> to transform manual release workflows into high-velocity automated delivery execution models within fast-paced Agile environments.
+            </p>
+        </section>
+
+        <!-- ===== CORE TECHNICAL SKILLS ===== -->
+        <section>
+            <h2>Core Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-row"><span class="skill-label">Languages & Frameworks:</span> <span class="skill-value">Java, OOPs Concepts, Collections Framework, TestNG, JUnit, Cucumber, TDD Framework, Spring Framework</span></div>
+                <div class="skill-row"><span class="skill-label">Automation & Testing:</span> <span class="skill-value">Playwright, REST Assured (API Testing), Appium (Mobile Testing - Android & iOS), Selenium WebDriver</span></div>
+                <div class="skill-row"><span class="skill-label">DevOps & CI/CD:</span> <span class="skill-value">Jenkins Pipelines, Ansible, Git, GitHub, ArgoCD, LambdaTest, BrowserStack</span></div>
+                <div class="skill-row"><span class="skill-label">Debugging & Tools:</span> <span class="skill-value">Grafana, Charles Proxy, Proxyman, Android Studio, Figma, Confluence, Jira</span></div>
+                <div class="skill-row"><span class="skill-label">Databases & Analytics:</span> <span class="skill-value">PostgreSQL, MongoDB, Redis, Mixpanel, CleverTap, Conviva, AppsFlyer</span></div>
+            </div>
+        </section>
+
+        <!-- ===== PROFESSIONAL EXPERIENCE ===== -->
+        <section>
+            <h2>Professional Experience</h2>
+
+            <!-- Onsurity -->
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <h3>Senior QA Engineer</h3>
+                    <span class="exp-date">11/2025 – Present</span>
                 </div>
+                <div class="exp-company">Onsurity</div>
+                <div class="exp-location">Bengaluru, India</div>
+                <ul>
+                    <li>Engineered comprehensive automated test scripts using <strong>REST Assured</strong> to validate POST/GET endpoints across claims and reimbursements ecosystem, ensuring zero schema drift</li>
+                    <li>Scaled modern web interface automation by implementing <strong>Playwright</strong> for fast, reliable end-to-end web testing across headless browser environments</li>
+                    <li>Integrated automated verification routines into unified deployment jobs backed by <strong>Git and GitHub</strong> source management</li>
+                    <li>Programmed automated data verification mechanisms to validate real-time <strong>TPA sync flows</strong>, ensuring accurate claim statuses on the member app</li>
+                    <li>Designed and executed complex automated functional tests to enforce member waiting periods and business rules for pre-existing diseases</li>
+                </ul>
+            </div>
 
-                <div class="contact-bar">
-                    <div class="contact-bar-item">
-                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>Bengaluru / Chennai</span>
-                    </div>
-                    <div class="contact-bar-item">
-                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>+91 95511 09941</span>
-                    </div>
-                    <div class="contact-bar-item">
-                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <a href="mailto:boobalakrishnan2789@gmail.com">boobalakrishnan2789@gmail.com</a>
-                    </div>
-                    <div class="contact-bar-item">
-                        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                        <a href="https://www.linkedin.com/in/boobalakrishnan-gopinathan-289312197" target="_blank">LinkedIn</a>
-                    </div>
-                    <div class="contact-bar-item">
-                        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                        <a href="https://github.com/boobalakrishnan89" target="_blank">GitHub</a>
-                    </div>
-                    <div class="contact-bar-item">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        <a href="https://boobalakrishnan89.github.io/resume/" target="_blank">Portfolio</a>
-                    </div>
+            <!-- Zepto -->
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <h3>Quality Engineer</h3>
+                    <span class="exp-date">11/2024 – 11/2025</span>
                 </div>
+                <div class="exp-company">Zepto</div>
+                <div class="exp-location">Bengaluru, India</div>
+                <ul>
+                    <li>Built and optimized scalable <strong>API testing and mobile testing automation suites</strong> using Java, JUnit, REST Assured, and Appium across Android and iOS</li>
+                    <li>Configured and maintained <strong>Jenkins and Ansible</strong> automated tasks to control regression suite orchestration and manage deployment health</li>
+                    <li>Evaluated and utilized <strong>Playwright parallel test execution</strong> metrics to accelerate internal portal smoke testing and cross-browser validations</li>
+                    <li>Leveraged <strong>Grafana logs</strong> to isolate and debug backend issues within complex bot, agentic, and AI conversational workflows, dramatically reducing MTTR</li>
+                    <li>Monitored pod health and microservice infrastructure deployments using <strong>ArgoCD</strong>, validating smooth production release cycles</li>
+                </ul>
+            </div>
 
-                <div class="sidebar-section">
-                    <div class="sidebar-section-title">Professional Summary</div>
-                    <div class="summary-text">
-                        A result-oriented professional with <strong>10+ years</strong> of experience in Quality Assurance, specializing in <strong>Test Automation</strong> and <strong>AI-driven QA processes</strong>. Proven expertise in building automation frameworks from scratch using Playwright, Appium, Selenium, and RestAssured. Pioneered AI-powered QA workflows leveraging Claude, GitHub Copilot, and OpenAI API to accelerate test design, execution, and reporting. Skilled in leading QA teams of 8+ engineers, driving CI/CD integrated automation, and delivering quality at scale across HealthTech, FinTech, and Enterprise domains.
-                    </div>
+            <!-- Zee Entertainment -->
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <h3>Test Engineer</h3>
+                    <span class="exp-date">06/2022 – 11/2024</span>
                 </div>
+                <div class="exp-company">Zee Entertainment Enterprises Limited</div>
+                <div class="exp-location">Bengaluru, India</div>
+                <ul>
+                    <li>Spearheaded test automation of critical OTT platform modules using <strong>Cucumber, TestNG, and TDD framework</strong> strategies for robust subscription validation</li>
+                    <li>Developed and expanded <strong>Appium automation frameworks</strong> across mobile web and native platforms for high-performance OTT application quality</li>
+                    <li>Reduced overall bug resolution turnaround time by <strong>20%</strong> through automated regression, smoke, and sanity test suite execution and JIRA defect mapping</li>
+                    <li>Executed advanced API validation utilizing <strong>Charles Proxy</strong> and tracked multi-platform metrics using Mixpanel, Conviva, and AppsFlyer</li>
+                </ul>
+            </div>
 
-                <div class="sidebar-section">
-                    <div class="sidebar-section-title">Education</div>
-                    <div class="edu-entry">
-                        <div class="edu-degree">Master of Engineering</div>
-                        <div class="edu-field">Computer Science Engineering</div>
-                        <div class="edu-meta">Anna University, Chennai &mdash; 2013</div>
-                    </div>
-                    <div class="edu-entry">
-                        <div class="edu-degree">Bachelor of Engineering</div>
-                        <div class="edu-field">Computer Science Engineering</div>
-                        <div class="edu-meta">Anna University, Chennai &mdash; 2011</div>
-                    </div>
+            <!-- Conduent -->
+            <div class="exp-entry">
+                <div class="exp-header">
+                    <h3>IT Testing Engineer 1</h3>
+                    <span class="exp-date">03/2021 – 06/2022</span>
                 </div>
+                <div class="exp-company">Conduent</div>
+                <div class="exp-location">Hyderabad, India</div>
+                <ul>
+                    <li>Authored and ran high-coverage web UI functional and regression automation test scripts using <strong>Selenium WebDriver, JUnit, and TestNG</strong></li>
+                    <li>Executed robust black-box testing techniques including system integration and cross-browser sweeps, maintaining source integrity across Git modules</li>
+                    <li>Evaluated multi-tier data points using <strong>MongoDB and PostgreSQL</strong> while tracking customer metrics through CleverTap and Mixpanel</li>
+                </ul>
+            </div>
 
-                <div class="sidebar-section">
-                    <div class="sidebar-section-title">Skill Profile</div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">Test Management Tools:</div>
-                        <div class="skill-group-items">JIRA, Azure</div>
-                    </div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">AI Testing Tools:</div>
-                        <div class="skill-group-items">Claude (Antigravity), GitHub Copilot, ChatGPT, Gemini AI</div>
-                    </div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">Automation Tools:</div>
-                        <div class="skill-group-items">Playwright, Selenium WebDriver, Appium, RestAssured, TestNG, Maven, CI/CD</div>
-                    </div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">API Testing Tools:</div>
-                        <div class="skill-group-items">Postman, Swagger, RestAssured</div>
-                    </div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">Database:</div>
-                        <div class="skill-group-items">MongoDB, MySQL, PostgreSQL</div>
-                    </div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">Debugging & Performance:</div>
-                        <div class="skill-group-items">Proxyman, DevTools (Chrome/Firefox), Kibana Logs, CleverTap, Loggly</div>
-                    </div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">Mobile Testing Tools:</div>
-                        <div class="skill-group-items">Android Studio, BrowserStack, TestFlight</div>
-                    </div>
-                    <div class="skill-group">
-                        <div class="skill-group-title">Cloud & Infra:</div>
-                        <div class="skill-group-items">AWS, GitHub, Eclipse IDE, Antigravity, Antigravity IDE</div>
-                    </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section>
+            <h2>Education</h2>
+            <div class="edu-grid">
+                <div class="edu-entry">
+                    <div class="edu-degree">B.Tech in Engineering</div>
+                    <div class="edu-field">Biju Patnaik University of Technology, Odisha</div>
+                    <div class="edu-meta">2018</div>
                 </div>
+                <div class="edu-entry">
+                    <div class="edu-degree">Diploma of Higher Education</div>
+                    <div class="edu-field">Ganesh Institute of Engineering and Technology, Odisha</div>
+                    <div class="edu-meta">2015</div>
+                </div>
+                <div class="edu-entry">
+                    <div class="edu-degree">10th Grade</div>
+                    <div class="edu-field">Titira High School, Odisha</div>
+                    <div class="edu-meta">2012</div>
+                </div>
+            </div>
+        </section>
 
-            </aside>
-
-            <!-- ===== RIGHT MAIN CONTENT ===== -->
-            <main class="main-content">
-
-                <section class="main-section">
-                    <h2 class="main-section-title">Work History</h2>
-
-                    <!-- Onsurity -->
-                    <div class="exp-entry">
-                        <div class="exp-title-row">
-                            <span class="exp-role-title">Senior QA Engineer | Lead QA</span>
-                            <span class="exp-date">05/2023 &ndash; Present</span>
-                        </div>
-                        <div class="exp-company">Onsurity</div>
-                        <div class="exp-location">Bengaluru (Hybrid)</div>
-                        <span class="exp-domain-tag">Health Insurance &middot; Employee Benefits</span>
-                        <ul class="exp-bullets">
-                            <li>Lead and mentor 8 QA engineers to drive quality standards across all product verticals</li>
-                            <li>Built Web + API Automation Framework from scratch using Playwright & RestAssured</li>
-                            <li>Built Appium Framework for mobile app automation on Android</li>
-                            <li>Introduced end-to-end AI-powered QA process for test design and sign-off</li>
-                            <li>Leveraged AI for automated test case generation, bug analysis, and intelligent reporting</li>
-                            <li>Built Bug Tracking Utility via JIRA MCP for real-time tracking using AI agents</li>
-                            <li>Built a <strong>QA Team Dashboard</strong> to track all QA activities and ticket movements using JIRA MCP</li>
-                            <li>Built Database Validation Utility to automate QA data verification workflows</li>
-                            <li>Automated stable Web and Mobile modules to reduce regression testing effort</li>
-                            <li>Maintain quality deliverables and ensure comprehensive test coverage for every release</li>
-                            <li>Document and maintain test reports for auditing and compliance requirements</li>
-                            <li>Track all releases on Confluence and JIRA for transparent project visibility</li>
-                            <li>Conduct daily scrum calls to track progress and resolve blockers</li>
-                        </ul>
-                        <div class="achievements-box">
-                            <div class="achievements-box-title">Key Achievements</div>
-                            <ul>
-                                <li>Won <strong>Sprint Champion</strong> award twice for outstanding contributions</li>
-                                <li>Pioneered <strong>AI-first QA strategy</strong> — integrated AI into test design, test case creation, and defect analysis pipeline</li>
-                                <li>Achieved significant reduction in manual testing effort through <strong>end-to-end automation coverage</strong></li>
-                                <li>Built 3 automation frameworks from scratch: <strong>Playwright (Web), RestAssured (API), Appium (Mobile)</strong></li>
-                            </ul>
-                        </div>
-                        <div class="exp-tools-row">
-                            <span class="exp-tool">Playwright</span>
-                            <span class="exp-tool">Appium</span>
-                            <span class="exp-tool">RestAssured</span>
-                            <span class="exp-tool">Java</span>
-                            <span class="exp-tool">Claude AI</span>
-                            <span class="exp-tool">JIRA MCP</span>
-                            <span class="exp-tool">MongoDB</span>
-                            <span class="exp-tool">MySQL</span>
-                            <span class="exp-tool">Kibana</span>
-                            <span class="exp-tool">AWS</span>
-                            <span class="exp-tool">JIRA</span>
-                            <span class="exp-tool">Confluence</span>
-                            <span class="exp-tool">CleverTap</span>
-                        </div>
-                    </div>
-
-                    <!-- Simpl -->
-                    <div class="exp-entry">
-                        <div class="exp-title-row">
-                            <span class="exp-role-title">Senior QA Engineer</span>
-                            <span class="exp-date">10/2022 &ndash; 04/2023</span>
-                        </div>
-                        <div class="exp-company">Simpl</div>
-                        <div class="exp-location">Bengaluru</div>
-                        <ul class="exp-bullets">
-                            <li>Contributed to <strong>Web Automation Framework</strong> development using <strong>Java + Selenium WebDriver</strong></li>
-                            <li>Automated merchant integration and payment transaction screen validations</li>
-                            <li>Performed functional, regression, adhoc, and re-testing across web and mobile</li>
-                            <li>Conducted mobile application testing using <strong>BrowserStack</strong> and real-time devices</li>
-                            <li>Gathered requirements from Product & Design teams for test strategy creation</li>
-                            <li>Tracked and logged defects in JIRA with detailed reproduction steps</li>
-                        </ul>
-                        <div class="exp-tools-row">
-                            <span class="exp-tool">Java</span>
-                            <span class="exp-tool">Selenium</span>
-                            <span class="exp-tool">Automation Framework</span>
-                            <span class="exp-tool">JIRA</span>
-                            <span class="exp-tool">CleverTap</span>
-                            <span class="exp-tool">Loggly</span>
-                            <span class="exp-tool">BrowserStack</span>
-                        </div>
-                    </div>
-
-                    <!-- ClearTax -->
-                    <div class="exp-entry">
-                        <div class="exp-title-row">
-                            <span class="exp-role-title">Senior QA Engineer</span>
-                            <span class="exp-date">02/2019 &ndash; 09/2022</span>
-                        </div>
-                        <div class="exp-company">ClearTax (Clear)</div>
-                        <div class="exp-location">Bengaluru</div>
-                        <span class="exp-domain-tag">FinTech &middot; Tax Compliance</span>
-                        <ul class="exp-bullets">
-                            <li>Designed and maintained <strong>end-to-end automation coverage</strong> for assigned scenarios and modules</li>
-                            <li>Built and maintained <strong>CI/CD integrated automation suite</strong> — scripted, executed, reviewed PRs</li>
-                            <li>Created <strong>reusable automation components</strong> for framework scalability and faster development</li>
-                            <li>Conducted Web application testing — <strong>UI (Java + Selenium)</strong> and <strong>API (Postman / RestAssured)</strong></li>
-                            <li>Defined and tracked QA metrics including defect counts, test results, and defect triage</li>
-                            <li>Participated in RCA meetings for issue triaging and documented regression findings</li>
-                            <li>Performed mobile testing across Android, iOS, and BrowserStack</li>
-                            <li>Collaborated with engineering and product teams to resolve testing problems</li>
-                        </ul>
-                        <div class="exp-tools-row">
-                            <span class="exp-tool">Java</span>
-                            <span class="exp-tool">Selenium</span>
-                            <span class="exp-tool">RestAssured</span>
-                            <span class="exp-tool">Postman</span>
-                            <span class="exp-tool">CI/CD</span>
-                            <span class="exp-tool">JIRA</span>
-                            <span class="exp-tool">CleverTap</span>
-                            <span class="exp-tool">GitHub</span>
-                            <span class="exp-tool">BrowserStack</span>
-                        </div>
-                    </div>
-
-                    <!-- Infosys -->
-                    <div class="exp-entry">
-                        <div class="exp-title-row">
-                            <span class="exp-role-title">Technology Support Specialist</span>
-                            <span class="exp-date">08/2018 &ndash; 02/2019</span>
-                        </div>
-                        <div class="exp-company">Infosys Ltd</div>
-                        <div class="exp-location">Mysuru</div>
-                        <ul class="exp-bullets">
-                            <li>Identified and documented <strong>automation candidates</strong> from manual regression suites</li>
-                            <li>Gathered requirements and understood business context for test case preparation and execution</li>
-                            <li>Performed Smoke, Functional, Regression, Adhoc, and Re-Testing</li>
-                            <li>Created and monitored sub-tasks in JIRA for team progress tracking</li>
-                            <li>Reviewed test cases written by peers and participated in defect review meetings</li>
-                        </ul>
-                    </div>
-
-                    <!-- Citiair -->
-                    <div class="exp-entry">
-                        <div class="exp-title-row">
-                            <span class="exp-role-title">Test Engineer</span>
-                            <span class="exp-date">07/2015 &ndash; 08/2018</span>
-                        </div>
-                        <div class="exp-company">Citiair LLC</div>
-                        <div class="exp-location">Chennai</div>
-                        <ul class="exp-bullets">
-                            <li>Developed foundational <strong>test automation scripts</strong> and evaluated automation tools for QA</li>
-                            <li>Worked with development teams to understand technical design for test planning</li>
-                            <li>Created and executed manual test cases with focus on <strong>automation-ready test design</strong></li>
-                            <li>Logged and tracked defects in Quality Center</li>
-                        </ul>
-                    </div>
-
-                </section>
-            </main>
-
-        </div>
     </div>
 
 </body>
