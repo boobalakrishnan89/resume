@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Prep — Senior QA Engineer · 10+ Years</title>
+    <meta name="description" content="In-depth interview Q&A for Senior QA Engineer / Lead QA with 10+ years of experience. Covers Playwright, Appium, Selenium, RestAssured, AI-powered QA, JIRA MCP, CI/CD, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f0f11;
+            --surface: #18181b;
+            --surface-2: #1e1e23;
+            --border: #2a2a30;
+            --text: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e;
+            --yellow: #eab308;
+            --blue: #3b82f6;
+            --orange: #f97316;
+            --pink: #ec4899;
+            --cyan: #06b6d4;
+            --code-bg: #1a1a2e;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            text-align: center;
+            padding: 80px 24px 60px;
+            background: linear-gradient(135deg, #0f0f11 0%, #1a1a2e 50%, #0f0f11 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, var(--accent-glow) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .hero-content { position: relative; z-index: 1; }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: var(--accent-glow);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 900;
+            background: linear-gradient(135deg, #e4e4e7, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(15, 15, 17, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            overflow-x: auto;
+        }
+
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            gap: 4px;
+            padding: 8px 0;
+        }
+
+        .nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 8px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--text);
+            background: var(--surface);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            margin-top: 56px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .section-count {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ===== Q&A CARDS ===== */
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .qa-card:hover { border-color: var(--accent); }
+
+        .qa-question {
+            padding: 20px 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            user-select: none;
+        }
+
+        .qa-number {
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 4px 10px;
+            border-radius: 6px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .qa-q-text {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .qa-toggle {
+            font-size: 20px;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            margin-top: 2px;
+        }
+
+        .qa-card.open .qa-toggle { transform: rotate(45deg); }
+
+        .qa-answer {
+            display: none;
+            padding: 0 24px 24px;
+            padding-left: 62px;
+        }
+
+        .qa-card.open .qa-answer { display: block; }
+
+        .qa-answer p,
+        .qa-answer li {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.75;
+        }
+
+        .qa-answer strong { color: var(--text); }
+
+        .qa-answer ul, .qa-answer ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .qa-answer li { margin-bottom: 6px; }
+
+        .qa-answer h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 18px 0 8px;
+        }
+
+        /* ===== CODE BLOCKS ===== */
+        .code-block {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 12px 0;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #a5b4fc;
+        }
+
+        /* ===== TABLES ===== */
+        .qa-answer table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+
+        .qa-answer th {
+            background: var(--surface-2);
+            color: var(--text);
+            font-weight: 700;
+            text-align: left;
+            padding: 10px 14px;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .qa-answer td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+
+        /* ===== TELL ME ABOUT YOURSELF — SPECIAL ===== */
+        .intro-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+
+        .intro-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .intro-card .version-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .v-full { background: rgba(34, 197, 94, 0.15); color: var(--green); border: 1px solid rgba(34, 197, 94, 0.3); }
+        .v-concise { background: rgba(59, 130, 246, 0.15); color: var(--blue); border: 1px solid rgba(59, 130, 246, 0.3); }
+        .v-elevator { background: rgba(249, 115, 22, 0.15); color: var(--orange); border: 1px solid rgba(249, 115, 22, 0.3); }
+
+        .intro-card .answer-text {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .intro-card .answer-text strong { color: var(--text); font-style: normal; }
+
+        /* ===== TIPS BOX ===== */
+        .tips-box {
+            background: var(--surface);
+            border-left: 3px solid var(--yellow);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+
+        .tips-box h4 {
+            color: var(--yellow);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .tips-box li {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .footer a { color: var(--accent); text-decoration: none; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero { padding: 48px 16px 40px; }
+            .hero-stats { gap: 20px; }
+            .stat-number { font-size: 22px; }
+            .qa-question { padding: 16px; }
+            .qa-answer { padding: 0 16px 16px; padding-left: 16px; }
+            .intro-card { padding: 20px; }
+            .section-title { font-size: 18px; }
+        }
+
+        /* Print */
+        @media print {
+            .nav, .hero::before { display: none; }
+            .qa-card.open .qa-answer { display: block; }
+            body { background: white; color: #1a1a1a; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">📋 Interview Preparation Guide</div>
+            <h1>Senior QA Engineer<br>Interview Q&A</h1>
+            <p class="hero-subtitle">40+ in-depth questions with detailed answers for 10+ years experienced QA professionals</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">40+</div>
+                    <div class="stat-label">Questions</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">11</div>
+                    <div class="stat-label">Sections</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Focus</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Code Snippets</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#intro">Tell Me About Yourself</a>
+            <a href="#strategy">Strategy</a>
+            <a href="#framework">Framework</a>
+            <a href="#playwright">Playwright</a>
+            <a href="#appium">Appium</a>
+            <a href="#api">API Testing</a>
+            <a href="#ai">AI-Powered QA</a>
+            <a href="#database">Database</a>
+            <a href="#cicd">CI/CD</a>
+            <a href="#debugging">Debugging</a>
+            <a href="#scenarios">Scenarios</a>
+            <a href="#behavioral">Behavioral</a>
+        </div>
+    </nav>
+
+    <!-- ===== CONTENT ===== -->
+    <div class="container">
+
+        <!-- ========================================== -->
+        <!--  TELL ME ABOUT YOURSELF                    -->
+        <!-- ========================================== -->
+        <section class="section" id="intro">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(99,102,241,0.15);">⭐</div>
+                <div>
+                    <div class="section-title">Tell Me About Yourself</div>
+                    <div class="section-count">3 versions — practice all until natural</div>
+                </div>
+            </div>
+
+            <div class="intro-card">
+                <span class="version-badge v-full">✅ FULL VERSION — 2 MINUTES</span>
+                <h3>For Detailed Technical Interviews</h3>
+                <p class="answer-text">"Hi, I'm BoobalaKrishnan Gopinathan. I'm a Senior QA Engineer and Lead QA with <strong>over 10 years of experience</strong> in Quality Assurance, specializing in Test Automation and AI-driven QA processes.<br><br>I started my career as a Test Engineer at <strong>Citiair</strong> in Chennai, where I built a strong foundation in manual testing, test case design, and defect management. I then moved to <strong>Infosys</strong>, where I transitioned into automation — working on enterprise-scale projects and learning Selenium and Java.<br><br>My career took a significant leap at <strong>ClearTax</strong>, where I spent over 3 years as a Senior QA Engineer in the FinTech space. There, I built and maintained CI/CD-integrated automation suites using <strong>Selenium and RestAssured</strong>, led API testing, conducted mobile testing across Android and iOS, and started mentoring junior engineers.<br><br>I then briefly worked at <strong>Simpl</strong>, another FinTech company focused on payments, where I contributed to their web automation framework and tested merchant integration and payment transaction flows.<br><br>For the past <strong>2+ years</strong>, I've been at <strong>Onsurity</strong> as a <strong>Lead QA</strong>, where I lead a team of <strong>8 QA engineers</strong> across the HealthTech domain. This is where I've had the most impact — I built <strong>3 automation frameworks from scratch</strong> (Playwright for web, RestAssured for API, Appium for mobile), <strong>pioneered an AI-first QA strategy</strong> using Claude AI, GitHub Copilot, and JIRA MCP, built a <strong>Bug Tracking Utility and QA Dashboard</strong>, and a <strong>Database Validation Utility</strong> for automated data verification.<br><br>I hold a <strong>Master's degree in Computer Science</strong> from Anna University, and I'm now looking for a role where I can bring my leadership, framework-building expertise, and AI-driven QA innovation to drive quality strategy at an organizational level."</p>
+            </div>
+
+            <div class="intro-card">
+                <span class="version-badge v-concise">⚡ CONCISE VERSION — 1 MINUTE</span>
+                <h3>For Screening / HR Rounds</h3>
+                <p class="answer-text">"I'm BoobalaKrishnan, a Senior QA Engineer and Lead QA with <strong>10+ years of experience</strong>. I currently lead a team of 8 QA engineers at <strong>Onsurity</strong> in the HealthTech space.<br><br>My key strengths are in <strong>building automation frameworks from scratch</strong> — I've built frameworks using Playwright, RestAssured, and Appium. I specialize in <strong>AI-powered QA</strong> — I integrated AI tools like Claude and JIRA MCP to automate test design, bug analysis, and reporting, which reduced our test design time by <strong>60%</strong>.<br><br>Before Onsurity, I worked at <strong>ClearTax and Simpl</strong> in FinTech, building CI/CD-integrated test suites and leading API and mobile testing efforts. I'm looking for a senior QA leadership role where I can drive quality strategy and bring AI-driven innovation."</p>
+            </div>
+
+            <div class="intro-card">
+                <span class="version-badge v-elevator">🚀 ELEVATOR PITCH — 30 SECONDS</span>
+                <h3>For Quick Intros / Networking</h3>
+                <p class="answer-text">"I'm BoobalaKrishnan, a Lead QA with <strong>10+ years</strong> in test automation and AI-driven QA. I currently lead 8 engineers at Onsurity, where I built <strong>3 automation frameworks from scratch</strong> and pioneered AI-powered testing using Claude and JIRA MCP. My expertise spans <strong>Playwright, Appium, RestAssured, and CI/CD</strong> — across HealthTech and FinTech domains."</p>
+            </div>
+
+            <div class="tips-box">
+                <h4>💡 Delivery Tips</h4>
+                <ul>
+                    <li><strong>Structure:</strong> Past → Present → Future (where you came from, what you're doing now, what you want next)</li>
+                    <li><strong>Highlight numbers:</strong> 10+ years, 8 engineers, 3 frameworks, 60% improvement</li>
+                    <li><strong>Mention AI:</strong> It's your differentiator — most QA leads don't have this</li>
+                    <li><strong>End with intent:</strong> Always close with what you're looking for</li>
+                    <li><strong>Tone:</strong> Confident but not arrogant, conversational not rehearsed</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Sections will be generated by JavaScript from data -->
+        <div id="sections-container"></div>
+
+    </div>
+
+    <footer class="footer">
+        <p>Built with ❤️ by <a href="https://github.com/boobalakrishnan89" target="_blank">BoobalaKrishnan Gopinathan</a> · Senior QA Engineer · 10+ Years</p>
+    </footer>
+
+    <script>
+    // ===== Q&A DATA =====
+    const sections = [
+        {
+            id: "strategy", icon: "🎯", color: "99,102,241",
+            title: "QA Strategy & Leadership", count: "Q1–Q6",
+            questions: [
+                { q: "Walk us through your QA journey over 10+ years. How has your role evolved?", a: `<ul><li><strong>Years 1–3 (Citiair):</strong> Started as a Test Engineer — manual testing, test case creation, defect logging in Quality Center. Learned test fundamentals, SDLC, and STLC deeply.</li><li><strong>Years 4–5 (Infosys):</strong> Moved to automation — identified automation candidates from regression suites, built first Selenium scripts, learned Java, understood enterprise-scale testing.</li><li><strong>Years 5–8 (ClearTax):</strong> Became Senior QA — owned module-level test strategy, built CI/CD-integrated automation suites using Selenium + RestAssured, led API testing, performed mobile testing, mentored juniors.</li><li><strong>Years 8–9 (Simpl):</strong> FinTech exposure — payment transaction testing, merchant integration, security-focused testing.</li><li><strong>Years 9–10+ (Onsurity):</strong> Lead QA — built 3 frameworks from scratch, pioneered AI-powered QA, built JIRA MCP utilities, leading team of 8.</li></ul><p><strong>Key evolution:</strong> Manual Tester → Automation Engineer → Framework Architect → QA Leader & AI Innovator</p>` },
+                { q: "How do you define QA strategy for an entire organization?", a: `<ol><li><strong>Assess current state</strong> — Audit existing processes, tools, coverage gaps, team skills</li><li><strong>Define quality goals</strong> — Zero P1 bugs in production, 80%+ automation coverage</li><li><strong>Tool selection</strong> — Evaluate and standardize tools (Playwright, Appium, RestAssured)</li><li><strong>Framework architecture</strong> — Design scalable, maintainable frameworks with POM, data-driven, CI/CD</li><li><strong>AI integration</strong> — Leverage AI for test design, bug analysis, and reporting</li><li><strong>Shift-left approach</strong> — QA involved from requirement phase</li><li><strong>Metrics & KPIs</strong> — Define measurable quality indicators</li><li><strong>Team development</strong> — Skill matrix, training plans, knowledge sharing</li><li><strong>Process standardization</strong> — Test case review, PR review, release sign-off checklist</li><li><strong>Continuous improvement</strong> — Quarterly retrospectives on QA process</li></ol>` },
+                { q: "What QA metrics and KPIs do you track as a Lead?", a: `<table><tr><th>Metric</th><th>Target</th><th>How Tracked</th></tr><tr><td><strong>Defect Leakage Rate</strong></td><td>&lt;5% to production</td><td>JIRA dashboard</td></tr><tr><td><strong>Automation Coverage</strong></td><td>&gt;80% of regression</td><td>Test management tool</td></tr><tr><td><strong>Test Execution Time</strong></td><td>&lt;2 hours full regression</td><td>CI/CD pipeline logs</td></tr><tr><td><strong>Defect Density</strong></td><td>&lt;0.5 per KLOC</td><td>JIRA + code metrics</td></tr><tr><td><strong>Test Case Effectiveness</strong></td><td>&gt;90% pass rate</td><td>TestNG reports</td></tr><tr><td><strong>MTTD</strong></td><td>&lt;4 hours for P1</td><td>JIRA SLA</td></tr><tr><td><strong>Bug Reopen Rate</strong></td><td>&lt;5%</td><td>JIRA workflow</td></tr><tr><td><strong>Automation ROI</strong></td><td>3x manual effort saved</td><td>Time tracking</td></tr></table>` },
+                { q: "How do you build a QA team from scratch?", a: `<ol><li><strong>Define roles:</strong> Lead QA, Senior QA (automation), QA Engineers (manual + learning automation)</li><li><strong>Hiring criteria:</strong> Problem-solving > tool expertise, automation mindset, domain interest</li><li><strong>Onboarding plan:</strong> 2-week structured onboarding with product, architecture, tools training</li><li><strong>Skill matrix:</strong> Map each engineer's strengths and growth areas</li><li><strong>Pairing:</strong> Pair junior with senior for knowledge transfer</li><li><strong>Process setup:</strong> Sprint ceremonies, PR reviews, test case review process</li><li><strong>Tool training:</strong> Hands-on workshops on Playwright, RestAssured, JIRA</li><li><strong>Culture:</strong> Quality is everyone's responsibility, not just QA's job</li></ol>` },
+                { q: "How do you handle QA in an Agile/Scrum environment with tight deadlines?", a: `<ul><li><strong>Risk-based testing</strong> — Prioritize high-risk, high-impact areas</li><li><strong>Shift-left</strong> — Start test design during sprint planning, not after dev completion</li><li><strong>Automation-first</strong> — Automate repetitive regression, focus manual effort on new features</li><li><strong>Parallel execution</strong> — QA starts on completed stories while dev continues on others</li><li><strong>Definition of Done</strong> — Clear criteria: unit tests passed, code review done, QA signed off</li><li><strong>Communication</strong> — Daily sync with dev on blockers</li><li><strong>Scope negotiation</strong> — If timeline is tight, negotiate scope with PM rather than skip testing</li></ul>` },
+                { q: "How do you ensure quality without slowing down releases?", a: `<ul><li><strong>Automated gates</strong> — Smoke tests run on every PR, block merge on failure</li><li><strong>Parallel testing</strong> — API, UI, and mobile tests run simultaneously</li><li><strong>Selective regression</strong> — Impact analysis to run only affected module tests</li><li><strong>Feature flags</strong> — Release dark features, test in production safely</li><li><strong>Canary releases</strong> — Gradual rollout with monitoring before full release</li><li><strong>AI-assisted</strong> — AI generates test cases faster, identifies risk areas automatically</li></ul>` }
+            ]
+        },
+        {
+            id: "framework", icon: "🏗️", color: "34,197,94",
+            title: "Framework Architecture & Design", count: "Q7–Q10",
+            questions: [
+                { q: "How do you architect a test automation framework from scratch?", a: `<p>I've built 3 frameworks at Onsurity. My architecture approach:</p><div class="code-block">Framework Architecture:
+├── core/
+│   ├── BasePage.java          → Common page methods
+│   ├── BaseTest.java          → Setup/teardown, browser init
+│   ├── ConfigManager.java     → Environment configs (singleton)
+│   └── DriverFactory.java     → Browser/device factory pattern
+├── pages/
+│   ├── LoginPage.java         → Page Object with locators + methods
+│   ├── ClaimsPage.java
+│   └── DashboardPage.java
+├── api/
+│   ├── endpoints/             → API endpoint classes
+│   ├── models/                → POJO for request/response
+│   └── validators/            → Schema validators
+├── utils/
+│   ├── DataReader.java        → Excel, JSON, CSV readers
+│   ├── DatabaseUtil.java      → MongoDB, MySQL connection helpers
+│   ├── RetryAnalyzer.java     → Custom retry logic
+│   └── ReportManager.java     → Allure/HTML report integration
+├── tests/
+│   ├── smoke/                 → Quick validation tests
+│   ├── regression/            → Full coverage tests
+│   └── integration/           → Cross-module tests
+├── testng.xml
+├── pom.xml
+└── Jenkinsfile / .github/     → CI/CD pipeline config</div><p><strong>Design principles:</strong> Single Responsibility, DRY, Config-driven, Parallel-safe (ThreadLocal), CI/CD ready, Extensible</p>` },
+                { q: "How do you make your framework scalable for growing teams?", a: `<ul><li><strong>Coding standards</strong> — Enforce naming conventions, PR review checklist</li><li><strong>Documentation</strong> — README, wiki, code comments for every utility</li><li><strong>Template tests</strong> — Starter templates for new test classes</li><li><strong>Custom annotations</strong> — @Smoke, @Regression, @API for easy categorization</li><li><strong>Modular design</strong> — New modules can be added without touching existing code</li><li><strong>Training</strong> — Onboarding guide + hands-on workshop for new team members</li><li><strong>Linting</strong> — CheckStyle/SonarQube for code quality enforcement</li></ul>` },
+                { q: "How do you handle test data management across environments?", a: `<ul><li><strong>Environment-specific files:</strong> testdata-qa.json, testdata-staging.json</li><li><strong>Dynamic data generation:</strong> Faker library for unique emails, phone numbers</li><li><strong>API-based setup:</strong> Create test data via API calls in @BeforeMethod</li><li><strong>Database seeding:</strong> SQL/MongoDB scripts for complex data scenarios</li><li><strong>Cleanup:</strong> @AfterMethod clears test data to prevent pollution</li><li><strong>Masking:</strong> PII data masked in test environments (HealthTech compliance)</li><li><strong>Versioning:</strong> Test data files version-controlled in Git</li></ul>` },
+                { q: "How do you handle cross-browser and cross-device testing?", a: `<ul><li><strong>Cross-browser:</strong> Playwright supports Chromium, Firefox, WebKit natively — parallel tests across all three</li><li><strong>Cross-device:</strong> BrowserStack for 3000+ real device combinations</li><li><strong>Responsive testing:</strong> Playwright viewport emulation for tablet/mobile</li><li><strong>Strategy:</strong><ul><li><strong>Smoke</strong> → Chrome only (fast feedback)</li><li><strong>Regression</strong> → All 3 browsers + top 5 devices</li><li><strong>Pre-release</strong> → Full device matrix on BrowserStack</li></ul></li></ul>` }
+            ]
+        },
+        {
+            id: "playwright", icon: "🎭", color: "236,72,153",
+            title: "Playwright (Advanced)", count: "Q11–Q14",
+            questions: [
+                { q: "How did you migrate from Selenium to Playwright?", a: `<ol><li><strong>POC phase</strong> — Migrated 10 critical test cases, compared speed, reliability</li><li><strong>Results:</strong> 40% faster execution, 80% fewer flaky tests, simpler code</li><li><strong>Parallel migration</strong> — New tests in Playwright, maintained Selenium for legacy</li><li><strong>Team training</strong> — 3-day workshop on Playwright fundamentals</li><li><strong>Gradual migration</strong> — Module-by-module over 3 sprints</li><li><strong>Decommission</strong> — Retired Selenium once Playwright reached 100% coverage</li></ol>` },
+                { q: "How do you handle API mocking in Playwright for isolated UI testing?", a: `<div class="code-block">// Mock API response
+await page.route('**/api/claims', route => {
+    route.fulfill({
+        status: 200,
+        body: JSON.stringify({
+            claims: [{ id: 1, status: 'approved', amount: 5000 }]
+        })
+    });
+});
+
+// Mock error response
+await page.route('**/api/members', route => {
+    route.fulfill({ status: 500, body: 'Internal Server Error' });
+});
+
+// Abort specific requests (block analytics)
+await page.route('**/analytics/**', route => route.abort());</div><p>This ensures UI tests are <strong>independent of backend availability</strong>.</p>` },
+                { q: "How do you handle authentication in Playwright across multiple tests?", a: `<div class="code-block">// Save auth state after login
+const context = await browser.newContext();
+const page = await context.newPage();
+await page.goto('/login');
+await page.fill('#email', 'admin@test.com');
+await page.fill('#password', 'password');
+await page.click('#login-btn');
+await page.context().storageState({ path: 'auth.json' });
+
+// Reuse auth state in all tests — skip login
+const authContext = await browser.newContext({
+    storageState: 'auth.json'
+});</div><p>This <strong>saves 5-10 seconds per test</strong> by avoiding repeated login flows.</p>` },
+                { q: "How do you generate and use Playwright test reports?", a: `<ul><li><strong>HTML Reporter:</strong> npx playwright test --reporter=html — rich visual reports</li><li><strong>Allure:</strong> Integrated for detailed step-by-step reporting with screenshots</li><li><strong>Trace Viewer:</strong> npx playwright show-trace trace.zip — DOM snapshots, network, console logs</li><li><strong>CI Integration:</strong> Reports uploaded as artifacts in GitHub Actions</li><li><strong>Custom dashboards:</strong> Trend charts showing pass/fail rates across sprints</li><li><strong>Slack notification:</strong> Bot sends summary report after each CI run</li></ul>` }
+            ]
+        },
+        {
+            id: "appium", icon: "📱", color: "6,182,212",
+            title: "Appium (Advanced)", count: "Q15–Q16",
+            questions: [
+                { q: "How do you handle hybrid app testing with Appium?", a: `<div class="code-block">Set&lt;String&gt; contexts = driver.getContextHandles();
+driver.context("WEBVIEW_com.onsurity.app");
+// Now interact with web elements
+driver.context("NATIVE_APP");
+// Back to native elements</div><ul><li><strong>WebView debugging:</strong> Enable WebView debugging in app settings</li><li><strong>Locator strategy:</strong> Use CSS selectors in WebView, accessibility IDs in native</li></ul>` },
+                { q: "How do you set up Appium for parallel execution on BrowserStack?", a: `<div class="code-block">DesiredCapabilities caps = new DesiredCapabilities();
+caps.setCapability("browserstack.user", "USERNAME");
+caps.setCapability("browserstack.key", "ACCESS_KEY");
+caps.setCapability("app", "bs://app-id");
+caps.setCapability("device", "Samsung Galaxy S23");
+caps.setCapability("os_version", "13.0");
+caps.setCapability("project", "Onsurity");
+caps.setCapability("build", "Sprint-42");
+
+// TestNG parallel execution
+// testng.xml: &lt;suite parallel="tests" thread-count="5"&gt;</div><ul><li>Run <strong>5 devices simultaneously</strong> — Samsung, Pixel, OnePlus, Xiaomi, iPhone</li><li>BrowserStack automatically records video and captures logs</li></ul>` }
+            ]
+        },
+        {
+            id: "api", icon: "🔗", color: "249,115,22",
+            title: "RestAssured & API Testing", count: "Q17–Q19",
+            questions: [
+                { q: "How do you implement contract testing with RestAssured?", a: `<div class="code-block">@Test
+public void validateClaimResponseSchema() {
+    given()
+        .header("Authorization", "Bearer " + token)
+    .when()
+        .get("/api/v1/claims/123")
+    .then()
+        .statusCode(200)
+        .body(matchesJsonSchemaInClasspath("schemas/claim-response.json"));
+}</div><div class="code-block">// Schema file: claim-response.json
+{
+    "type": "object",
+    "required": ["id", "status", "amount", "member_id"],
+    "properties": {
+        "id": { "type": "integer" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"] },
+        "amount": { "type": "number", "minimum": 0 }
+    }
+}</div><p>This catches <strong>breaking API changes</strong> before they reach production.</p>` },
+                { q: "How do you handle API chaining and dependent tests?", a: `<div class="code-block">@Test(priority = 1)
+public void createMember() {
+    Response res = given().body(memberPayload)
+        .when().post("/api/members");
+    memberId = res.jsonPath().getString("data.id");
+    assertEquals(res.statusCode(), 201);
+}
+
+@Test(priority = 2, dependsOnMethods = "createMember")
+public void submitClaim() {
+    Response res = given().body(claimPayload(memberId))
+        .when().post("/api/claims");
+    claimId = res.jsonPath().getString("data.claim_id");
+    assertEquals(res.statusCode(), 201);
+}
+
+@Test(priority = 3, dependsOnMethods = "submitClaim")
+public void verifyClaim() {
+    Response res = given()
+        .when().get("/api/claims/" + claimId);
+    assertEquals(res.jsonPath().getString("status"), "pending");
+}</div>` },
+                { q: "How do you perform performance testing on APIs?", a: `<ul><li><strong>RestAssured response time:</strong> response.time() &lt; 2000L</li><li><strong>JMeter:</strong> For load/stress testing — simulate 1000+ concurrent users</li><li><strong>Monitoring:</strong> Grafana + Kibana dashboards during test execution</li><li><strong>Key metrics:</strong> Response time (p95, p99), throughput, error rate</li><li><strong>Thresholds:</strong> API &lt; 200ms (p95), Page load &lt; 3s, Error rate &lt; 0.1%</li><li><strong>Bottleneck identification:</strong> Slow queries, memory leaks, connection pool exhaustion</li></ul>` }
+            ]
+        },
+        {
+            id: "ai", icon: "🤖", color: "139,92,246",
+            title: "AI-Powered QA", count: "Q20–Q22",
+            questions: [
+                { q: "How did you transform QA with AI at Onsurity? Describe the complete journey.", a: `<h4>Phase 1 — Test Case Generation (Month 1–2)</h4><ul><li>Fed PRDs and user stories to Claude AI</li><li>AI generated comprehensive test cases with edge cases</li><li>Reduced test design time from <strong>3 days to 3 hours</strong> per feature</li></ul><h4>Phase 2 — Bug Analysis (Month 3–4)</h4><ul><li>AI analyzes bug descriptions, suggests root cause</li><li>Predicts regression impact areas</li><li>Reduced triage time by <strong>50%</strong></li></ul><h4>Phase 3 — JIRA MCP Utilities (Month 5–6)</h4><ul><li>Built Bug Tracking Utility — AI agent connected to JIRA via MCP</li><li>Built QA Dashboard — Real-time ticket movements, sprint velocity</li><li>Automated daily/weekly reports generation</li></ul><h4>Phase 4 — Intelligent Reporting (Month 7+)</h4><ul><li>AI summarizes test results after each run</li><li>Highlights risk areas, flaky tests, and coverage gaps</li><li>Reports sent automatically to Slack and Confluence</li></ul><p><strong>Impact:</strong> 60% reduction in manual test design, 30% improvement in coverage, Sprint Champion award × 2</p>` },
+                { q: "What are the risks of using AI in QA, and how do you mitigate them?", a: `<table><tr><th>Risk</th><th>Mitigation</th></tr><tr><td><strong>AI hallucination</strong></td><td>Human review mandatory before sign-off</td></tr><tr><td><strong>Over-reliance</strong></td><td>AI assists, doesn't replace human judgment</td></tr><tr><td><strong>Data privacy</strong></td><td>Use enterprise AI, no PII in prompts</td></tr><tr><td><strong>Consistency</strong></td><td>Structured prompts with templates</td></tr><tr><td><strong>Bias</strong></td><td>QA engineers add domain knowledge layer</td></tr><tr><td><strong>Maintenance</strong></td><td>Code review and refactoring standards apply equally</td></tr></table>` },
+                { q: "How does JIRA MCP work technically? Explain the architecture.", a: `<div class="code-block">Architecture:
+┌──────────────┐     MCP Protocol     ┌──────────────┐
+│   Claude AI  │ ◄──────────────────► │  MCP Server  │
+│   (Agent)    │                      │  (JIRA API)  │
+└──────────────┘                      └──────┬───────┘
+                                             │
+                                    REST API Calls
+                                             │
+                                      ┌──────▼───────┐
+                                      │   JIRA Cloud  │
+                                      │   Instance    │
+                                      └──────────────┘</div><ol><li><strong>MCP Server</strong> — Node.js server exposing JIRA operations as tools</li><li><strong>Tools available:</strong> search_issues, create_issue, update_issue, get_sprint</li><li><strong>AI Agent</strong> — Claude uses these tools for real-time bug tracking, trend reports, SLA breach alerts</li><li><strong>Security</strong> — API token-based auth, read-only for reporting</li></ol>` }
+            ]
+        },
+        {
+            id: "database", icon: "🗄️", color: "234,179,8",
+            title: "Database Testing", count: "Q23–Q24",
+            questions: [
+                { q: "How do you validate data integrity after complex workflows?", a: `<div class="code-block">// Step 1 — API call
+Response res = given().body(claimPayload).post("/api/claims");
+String claimId = res.jsonPath().getString("data.id");
+
+// Step 2 — MongoDB validation
+Document claim = claimsCollection.find(eq("_id", claimId)).first();
+assertEquals(claim.getString("status"), "submitted");
+
+// Step 3 — Check notification was queued
+Document notification = notifCollection
+    .find(eq("claim_id", claimId)).first();
+assertNotNull(notification);
+
+// Step 4 — TPA sync check
+Document tpaSync = tpaSyncCollection
+    .find(eq("claim_id", claimId)).first();
+assertEquals(tpaSync.getString("sync_status"), "PENDING");</div>` },
+                { q: "How do you handle database migration testing?", a: `<ol><li><strong>Pre-migration snapshot</strong> — Record counts, checksums of critical tables</li><li><strong>Run migration</strong> — Execute migration scripts in test environment</li><li><strong>Post-migration validation:</strong><ul><li>Row counts match</li><li>Data types correct</li><li>Foreign keys intact</li><li>No data loss or corruption</li><li>New columns populated correctly</li></ul></li><li><strong>Application testing</strong> — Run full regression after migration</li><li><strong>Rollback plan</strong> — Verify rollback scripts work if issues found</li></ol>` }
+            ]
+        },
+        {
+            id: "cicd", icon: "⚙️", color: "59,130,246",
+            title: "CI/CD & DevOps", count: "Q25–Q26",
+            questions: [
+                { q: "How do you design a CI/CD pipeline for test automation?", a: `<div class="code-block"># GitHub Actions Pipeline
+name: QA Pipeline
+on:
+  pull_request:
+  schedule:
+    - cron: '0 2 * * *'  # Nightly regression
+jobs:
+  smoke-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Smoke Tests
+        run: mvn test -Dsuite=smoke
+  regression-tests:
+    needs: smoke-tests
+    strategy:
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - name: Run Regression
+        run: mvn test -Dsuite=regression -Dbrowser=\${{ matrix.browser }}
+  notify:
+    needs: [regression-tests]
+    steps:
+      - name: Slack Notification
+        run: curl -X POST $SLACK_WEBHOOK -d '{"text":"QA Pipeline Complete"}'</div>` },
+                { q: "How do you handle test environment stability in CI/CD?", a: `<ul><li><strong>Docker containers</strong> — Spin up fresh environments per pipeline run</li><li><strong>Health checks</strong> — Pre-test validation that environment is up</li><li><strong>Data isolation</strong> — Each pipeline run uses unique test data</li><li><strong>Retry mechanism</strong> — Auto-retry failed tests once before marking as failed</li><li><strong>Parallel execution</strong> — Split tests across multiple runners</li><li><strong>Monitoring</strong> — Alert if environment is down before wasting pipeline minutes</li></ul>` }
+            ]
+        },
+        {
+            id: "debugging", icon: "🔍", color: "236,72,153",
+            title: "Debugging & Troubleshooting", count: "Q27–Q28",
+            questions: [
+                { q: "Describe your debugging workflow when a production bug is reported.", a: `<ol><li><strong>Reproduce</strong> — Replicate the issue on staging with same data/conditions</li><li><strong>Network analysis</strong> — Use Proxyman/DevTools to inspect API calls</li><li><strong>Log analysis</strong> — Search Kibana logs by request ID, trace the full request flow</li><li><strong>Database check</strong> — Verify data state in MongoDB/MySQL</li><li><strong>Compare environments</strong> — Check if issue exists on staging vs production</li><li><strong>Narrow down</strong> — Is it frontend, backend API, database, or third-party?</li><li><strong>Root cause</strong> — Document RCA with evidence</li><li><strong>Fix verification</strong> — Write a regression test case to prevent recurrence</li><li><strong>Post-mortem</strong> — Share learnings with the team</li></ol>` },
+                { q: "How do you use Proxyman to debug mobile app issues?", a: `<ul><li><strong>Setup:</strong> Configure iOS/Android proxy settings to point to Proxyman</li><li><strong>SSL certificates:</strong> Install Proxyman CA certificate for HTTPS interception</li><li><strong>Filter traffic:</strong> Filter by domain (e.g., api.onsurity.com)</li><li><strong>Compare:</strong> Compare request/response between working and broken flows</li><li><strong>Mock responses:</strong> Test edge cases by modifying API responses on-the-fly</li><li><strong>Save sessions:</strong> Export problematic sessions for developer review</li><li><strong>Example:</strong> Member app showing stale claim status → Proxyman revealed cached API response, identified missing Cache-Control header</li></ul>` }
+            ]
+        },
+        {
+            id: "scenarios", icon: "🧩", color: "249,115,22",
+            title: "Advanced Scenarios", count: "Q29–Q33",
+            questions: [
+                { q: "You're joining a new company as Lead QA. The QA process is entirely manual. How do you transform it?", a: `<h4>Month 1 — Assessment & Quick Wins</h4><ul><li>Audit current process, identify pain points</li><li>Set up JIRA dashboards for visibility</li><li>Identify top 20 repetitive test cases → automate first</li></ul><h4>Month 2–3 — Foundation</h4><ul><li>Select automation stack (Playwright + RestAssured + Appium)</li><li>Build framework skeleton with POM, config management</li><li>Hire/train 2 automation engineers</li></ul><h4>Month 4–6 — Scale</h4><ul><li>Automate 60%+ of regression suite</li><li>Integrate into CI/CD pipeline</li><li>Set up cross-browser/device testing</li></ul><h4>Month 7–12 — Optimize</h4><ul><li>Introduce AI-assisted testing</li><li>Achieve 80%+ automation coverage</li><li>Measure and report ROI to leadership</li></ul>` },
+                { q: "Your automation suite has 500 tests and takes 6 hours. How do you bring it to under 1 hour?", a: `<ol><li><strong>Parallel execution</strong> — Split across 10 threads → 36min</li><li><strong>Categorize</strong> — Smoke (50 tests, 10min), Core (200, 30min), Extended (250, 20min)</li><li><strong>API-based data setup</strong> — Replace UI-based setup (saves 2-3s per test)</li><li><strong>Remove duplicates</strong> — Audit for overlapping tests (usually 10-15% redundancy)</li><li><strong>Mock external services</strong> — Eliminate third-party API wait times</li><li><strong>Optimize locators</strong> — CSS > XPath (30% faster)</li><li><strong>Auth reuse</strong> — Save login state, skip login (saves 5-10s per test)</li><li><strong>Selective execution</strong> — Impact-based: only run tests for changed modules</li></ol>` },
+                { q: "A developer says 'this is not a bug, it's working as designed.' How do you handle it?", a: `<ol><li><strong>Verify requirements</strong> — Check PRD, user story, acceptance criteria</li><li><strong>Show evidence</strong> — Screenshots, API responses, expected vs actual</li><li><strong>User perspective</strong> — "Would a user expect this behavior?"</li><li><strong>Data</strong> — Check analytics — are users dropping off at this step?</li><li><strong>Escalate if needed</strong> — Involve PM to clarify intent</li><li><strong>Document</strong> — If truly "as designed," add to known behaviors</li><li><strong>Never make it personal</strong> — Focus on the product, not the person</li></ol>` },
+                { q: "You have 3 P1 bugs, 2 QA engineers are on leave, and the release is tomorrow. What do you do?", a: `<ol><li><strong>Prioritize</strong> — Rank the 3 P1s by user impact and business criticality</li><li><strong>Communicate</strong> — Immediately inform PM and Engineering lead</li><li><strong>Negotiate scope</strong> — Release with 1 bug fixed + others behind feature flags?</li><li><strong>Hands-on</strong> — I personally take on testing for the most critical fix</li><li><strong>Parallel work</strong> — While dev fixes bugs, I prepare regression environments</li><li><strong>Risk acceptance</strong> — Document risk and get PM sign-off for delayed fix</li><li><strong>Never compromise silently</strong> — Always escalate risks transparently</li></ol>` },
+                { q: "How would you test a system that processes 10 million records per day?", a: `<ol><li><strong>Performance testing</strong> — JMeter/k6 to simulate peak load</li><li><strong>Data generation</strong> — Script to generate 10M+ realistic test records</li><li><strong>Database performance</strong> — Monitor query execution times, index usage</li><li><strong>Memory profiling</strong> — Check for memory leaks during sustained load</li><li><strong>Error handling</strong> — What happens when 1000 records fail? Retry mechanism?</li><li><strong>Data integrity</strong> — Sample validation on random records post-processing</li><li><strong>Monitoring</strong> — Grafana dashboards for throughput, latency, error rates</li><li><strong>Chaos testing</strong> — What happens when a downstream service goes down?</li></ol>` }
+            ]
+        },
+        {
+            id: "behavioral", icon: "💼", color: "34,197,94",
+            title: "Behavioral Questions", count: "Q34–Q40",
+            questions: [
+                { q: "Tell me about a time you made a significant impact on product quality.", a: `<p>At Onsurity, I pioneered the <strong>AI-first QA strategy</strong>:</p><ul><li><strong>Before:</strong> Test design took 3 days per feature, coverage had blind spots, reporting was manual</li><li><strong>What I did:</strong> Integrated Claude AI for test case generation, built JIRA MCP utilities, created QA Dashboard</li><li><strong>Impact:</strong> 60% faster test design, 30% better coverage, eliminated manual reporting</li><li><strong>Recognition:</strong> Won Sprint Champion award twice</li><li><strong>Long-term:</strong> This became the standard QA process for the entire engineering team</li></ul>` },
+                { q: "Describe a situation where you had to make a tough quality decision.", a: `<p>At ClearTax during tax filing season, we discovered a tax calculation error in ITR-4 affecting ~15% of users. The PM wanted to release on schedule.</p><ul><li><strong>My stand:</strong> Presented data showing incorrect tax filings for thousands of users</li><li><strong>Proposal:</strong> 48-hour delay with focused hotfix + targeted regression</li><li><strong>Outcome:</strong> Leadership agreed, bug was fixed, release went out clean</li><li><strong>Lesson:</strong> Quality decisions backed by data are always respected</li></ul>` },
+                { q: "How do you handle a team member who is consistently underperforming?", a: `<ol><li><strong>Private conversation</strong> — Understand personal/professional blockers</li><li><strong>Clear expectations</strong> — Document what "good performance" looks like</li><li><strong>Support plan</strong> — Pairing with senior, targeted training, reduced scope</li><li><strong>Regular check-ins</strong> — Weekly 1:1s to track improvement</li><li><strong>Measurable goals</strong> — "Automate 5 test cases this sprint" not "improve quality"</li><li><strong>Timeline</strong> — Give 2-3 sprints for improvement with support</li><li><strong>Escalate</strong> — If no improvement, involve manager/HR</li></ol>` },
+                { q: "How do you convince leadership to invest in test automation?", a: `<ul><li><strong>ROI calculation:</strong><ul><li>Manual regression: 5 engineers × 3 days × every sprint = expensive</li><li>Automation: 2 engineers × 6 weeks setup = long-term savings</li><li><strong>Break-even in 3-4 months</strong>, then net savings every sprint</li></ul></li><li><strong>Risk reduction:</strong> Show production bug trends and cost of fixes</li><li><strong>Speed:</strong> "We can release twice as fast with automated regression gates"</li><li><strong>Competition:</strong> "Our competitors release daily; we release monthly"</li><li><strong>Demo:</strong> Build a small POC, show it running in 5 minutes</li></ul>` },
+                { q: "What's your approach when you inherit legacy automation code that's poorly written?", a: `<ol><li><strong>Don't rewrite everything</strong> — Stabilize first, refactor gradually</li><li><strong>Identify most flaky tests</strong> — Fix or quarantine them</li><li><strong>Add reporting</strong> — Can't improve what you can't measure</li><li><strong>Introduce standards</strong> — PR reviews, coding guidelines going forward</li><li><strong>Refactor module by module</strong> — Start with most critical modules</li><li><strong>Train the team</strong> — Workshop on clean code practices</li><li><strong>Set target:</strong> "In 3 months, we'll have 90% reliable suite with 80% coverage"</li></ol>` },
+                { q: "Where do you see QA evolving in the next 3–5 years?", a: `<ul><li><strong>AI-native testing</strong> — AI writes tests, identifies bugs, suggests fixes</li><li><strong>Shift-left and shift-right</strong> — Testing in design phase AND production monitoring</li><li><strong>Autonomous testing</strong> — Self-healing tests that adapt to UI changes</li><li><strong>Quality engineering</strong> — QA engineers become quality coaches, not gatekeepers</li><li><strong>Observability-driven</strong> — Production monitoring replaces some traditional testing</li><li><strong>Low-code automation</strong> — Non-technical PMs write test scenarios</li><li><strong>Continuous testing</strong> — Every code change tested in under 5 minutes</li></ul>` },
+                { q: "Why should we hire you over someone with similar experience?", a: `<ol><li><strong>Builder mindset</strong> — I've built 3 frameworks from scratch, not just used existing ones</li><li><strong>AI innovation</strong> — I've built an AI-powered QA ecosystem, not just used ChatGPT</li><li><strong>Full-stack QA</strong> — Web, Mobile, API, Database, Performance — I cover everything</li><li><strong>Leadership</strong> — Managed teams of 8+, mentored engineers, drove process transformation</li><li><strong>Domain expertise</strong> — HealthTech, FinTech, Enterprise — I understand business context</li><li><strong>Results</strong> — Sprint Champion × 2, 60% faster test design, 3 frameworks built</li><li><strong>Growth mindset</strong> — I continuously learn and bring new innovations to the team</li></ol>` }
+            ]
+        }
+    ];
+
+    // ===== RENDER SECTIONS =====
+    const container = document.getElementById('sections-container');
+    let qNum = 1;
+
+    sections.forEach(section => {
+        let html = `
+        <section class="section" id="${section.id}">
+            <div class="section-header">
+                <div class="section-icon" style="background: rgba(${section.color}, 0.15);">${section.icon}</div>
+                <div>
+                    <div class="section-title">${section.title}</div>
+                    <div class="section-count">${section.count} · ${section.questions.length} questions</div>
+                </div>
+            </div>`;
+
+        section.questions.forEach(qa => {
+            html += `
+            <div class="qa-card" onclick="this.classList.toggle('open')">
+                <div class="qa-question">
+                    <span class="qa-number">Q${qNum}</span>
+                    <span class="qa-q-text">${qa.q}</span>
+                    <span class="qa-toggle">+</span>
+                </div>
+                <div class="qa-answer">${qa.a}</div>
+            </div>`;
+            qNum++;
+        });
+
+        html += `</section>`;
+        container.innerHTML += html;
+    });
+    </script>
+
+</body>
+</html>
