@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathivanan A — Founding SDET / Lead SDET</title>
-    <meta name="description" content="ATS-Friendly Resume of Mathivanan A — Founding SDET / Lead SDET with 10+ years of experience in Automation, API, Performance, Mobile, and Web Testing.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -41,96 +40,128 @@
             font-weight: 600;
             cursor: pointer;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            transition: all 0.2s ease;
-        }
-
-        .btn-print:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
         }
 
         .btn-print svg { stroke: white; fill: none; }
 
         .resume {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 44px 48px;
+            display: grid;
+            grid-template-columns: 260px 1fr;
             box-shadow: 0 4px 24px rgba(0,0,0,0.08);
         }
 
-        /* ===== HEADER ===== */
-        .header {
-            text-align: center;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #1a1a1a;
+        /* ===== LEFT SIDEBAR ===== */
+        .sidebar {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 36px 24px;
         }
 
-        h1 {
-            font-size: 26px;
-            font-weight: 800;
-            color: #1a1a1a;
+        .sidebar-name {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ffffff;
             letter-spacing: 1px;
-            text-transform: uppercase;
+            line-height: 1.2;
             margin-bottom: 4px;
         }
 
-        .header-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #2563eb;
-            letter-spacing: 0.5px;
+        .sidebar-initials {
+            font-size: 48px;
+            font-weight: 900;
+            color: rgba(255,255,255,0.08);
+            letter-spacing: 8px;
             margin-bottom: 8px;
         }
 
-        .contact-row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px 16px;
+        .sidebar-title {
             font-size: 12px;
-            color: #444;
+            font-weight: 600;
+            color: #60a5fa;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
         }
 
-        .contact-row a { color: #444; text-decoration: none; }
-        .divider { color: #ccc; }
+        .sidebar-contact {
+            font-size: 11px;
+            color: #94a3b8;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
 
-        /* ===== SECTIONS ===== */
-        h2 {
+        .sidebar-contact a { color: #93c5fd; text-decoration: none; }
+
+        .sidebar h2 {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .sidebar-summary {
+            font-size: 11px;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        .sidebar-summary strong { color: #ffffff; }
+
+        /* Skills */
+        .skill-item {
+            font-size: 10.5px;
+            color: #cbd5e1;
+            margin-bottom: 3px;
+            line-height: 1.45;
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+        }
+
+        .skill-item::before {
+            content: '●';
+            color: #60a5fa;
+            font-size: 7px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        /* Education */
+        .edu-degree-s { font-size: 12px; font-weight: 700; color: #ffffff; }
+        .edu-field-s { font-size: 10.5px; color: #94a3b8; }
+        .edu-school-s { font-size: 10px; color: #64748b; }
+
+        /* Award */
+        .award-text { font-size: 10.5px; color: #cbd5e1; line-height: 1.5; }
+
+        /* ===== RIGHT MAIN ===== */
+        .main {
+            padding: 36px 32px;
+        }
+
+        .main h2 {
             font-size: 13px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2.5px;
-            color: #1a1a1a;
-            margin-top: 16px;
-            margin-bottom: 8px;
-            padding-bottom: 4px;
-            border-bottom: 1.5px solid #1a1a1a;
-        }
-
-        .summary {
-            font-size: 12.5px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* ===== SKILLS ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px 24px;
-        }
-
-        .skill-row { font-size: 12px; line-height: 1.55; }
-        .skill-label { font-weight: 700; color: #1a1a1a; }
-        .skill-value { color: #444; }
-
-        /* ===== EXPERIENCE ===== */
-        .exp-entry {
+            color: #1e293b;
             margin-bottom: 14px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #1e293b;
+        }
+
+        /* Experience */
+        .exp-entry {
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #e5e7eb;
         }
 
         .exp-entry:last-child {
@@ -144,95 +175,50 @@
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            margin-bottom: 1px;
+            margin-bottom: 2px;
         }
 
-        h3 { font-size: 14px; font-weight: 700; color: #1a1a1a; }
+        h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1e293b;
+        }
 
-        .exp-date { font-size: 12px; font-weight: 600; color: #2563eb; }
-        .exp-company { font-size: 13px; font-weight: 600; color: #444; }
-        .exp-location { font-size: 11px; color: #888; margin-bottom: 2px; }
-
-        .exp-domain {
-            display: inline-block;
-            font-size: 10px;
+        .exp-date {
+            font-size: 11px;
             font-weight: 600;
-            color: #6366f1;
-            background: rgba(99, 102, 241, 0.08);
-            padding: 2px 8px;
-            border-radius: 4px;
+            color: #2563eb;
+        }
+
+        .exp-company {
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
             margin-bottom: 6px;
         }
 
-        ul { list-style: disc; padding-left: 20px; }
+        ul { list-style: disc; padding-left: 18px; }
 
         li {
             font-size: 12px;
-            line-height: 1.55;
-            color: #333;
-            margin-bottom: 4px;
-        }
-
-        li strong { color: #1a1a1a; }
-
-        /* ===== KEY ACHIEVEMENTS ===== */
-        .achievements {
-            background: #f8f9fa;
-            border-left: 3px solid #2563eb;
-            padding: 6px 12px;
-            margin-top: 6px;
-            border-radius: 0 6px 6px 0;
-        }
-
-        .achievements-title {
-            font-size: 10px;
-            font-weight: 800;
-            color: #2563eb;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .achievements li {
-            font-size: 11.5px;
             line-height: 1.5;
-            color: #333;
+            color: #334155;
+            margin-bottom: 4px;
         }
 
-        /* ===== TOOLS ROW ===== */
-        .tools-row {
-            font-size: 11px;
-            color: #666;
-            margin-top: 6px;
-        }
-
-        .tools-label {
-            font-weight: 700;
-            color: #1a1a1a;
-        }
-
-        /* ===== EDUCATION ===== */
-        .edu-degree { font-size: 13px; font-weight: 700; color: #1a1a1a; }
-        .edu-field { font-size: 12px; color: #444; }
-        .edu-meta { font-size: 11px; color: #2563eb; }
-
-        /* ===== EXTRA ===== */
-        .award-item { font-size: 12px; color: #333; }
+        li strong { color: #1e293b; }
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
-            body { padding: 10px 6px; }
-            .resume { padding: 24px 20px; }
-            h1 { font-size: 22px; }
-            .contact-row { flex-direction: column; gap: 4px; align-items: center; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .exp-header { flex-direction: column; }
+            .resume { grid-template-columns: 1fr; }
+            .sidebar { padding: 24px 20px; }
+            .main { padding: 24px 20px; }
         }
 
-        /* ===== Print Styles — Single Page A4 ===== */
+        /* ===== Print Styles ===== */
         @media print {
             @page {
-                margin: 0.25in 0.35in;
+                margin: 0;
                 size: A4;
             }
 
@@ -246,71 +232,68 @@
                 background: white;
             }
 
-            body { font-size: 9px; }
-
             .print-controls { display: none !important; }
 
             .resume {
                 max-width: 100%;
-                padding: 0;
                 box-shadow: none;
                 margin: 0;
+                grid-template-columns: 220px 1fr;
             }
 
-            .header {
+            .sidebar {
+                padding: 20px 14px;
+            }
+
+            .sidebar-name { font-size: 18px; margin-bottom: 2px; }
+            .sidebar-initials { font-size: 32px; margin-bottom: 4px; }
+            .sidebar-title { font-size: 8.5px; margin-bottom: 10px; }
+            .sidebar-contact { font-size: 7.5px; margin-bottom: 14px; line-height: 1.6; }
+
+            .sidebar h2 {
+                font-size: 7.5px;
+                margin-top: 10px;
                 margin-bottom: 6px;
-                padding-bottom: 5px;
+                letter-spacing: 1.5px;
             }
 
-            h1 { font-size: 16px; margin-bottom: 2px; }
-            .header-title { font-size: 9px; margin-bottom: 2px; }
-            .contact-row { font-size: 8px; gap: 2px 8px; }
+            .sidebar-summary { font-size: 7.5px; line-height: 1.45; }
+            .skill-item { font-size: 7.5px; margin-bottom: 1px; line-height: 1.35; }
+            .skill-item::before { font-size: 5px; }
+            .edu-degree-s { font-size: 8.5px; }
+            .edu-field-s { font-size: 7.5px; }
+            .edu-school-s { font-size: 7px; }
+            .award-text { font-size: 7.5px; }
 
-            h2 {
-                font-size: 8.5px;
-                margin-top: 8px;
-                margin-bottom: 4px;
+            .main {
+                padding: 20px 18px;
+            }
+
+            .main h2 {
+                font-size: 9px;
+                margin-bottom: 8px;
                 padding-bottom: 2px;
                 letter-spacing: 2px;
             }
 
-            .summary { font-size: 8px; line-height: 1.4; }
-
-            .skills-grid { gap: 1px 14px; }
-            .skill-row { font-size: 7.5px; line-height: 1.35; }
-
             .exp-entry {
-                margin-bottom: 6px;
-                padding-bottom: 5px;
+                margin-bottom: 8px;
+                padding-bottom: 7px;
             }
 
             h3 { font-size: 9.5px; }
             .exp-date { font-size: 7.5px; }
-            .exp-company { font-size: 8.5px; }
-            .exp-location { font-size: 7px; margin-bottom: 1px; }
-            .exp-domain { font-size: 6px; padding: 1px 4px; margin-bottom: 2px; }
+            .exp-company { font-size: 8.5px; margin-bottom: 3px; }
 
-            ul { padding-left: 14px; }
+            ul { padding-left: 12px; }
 
             li {
                 font-size: 7.5px;
-                line-height: 1.25;
-                margin-bottom: 0;
+                line-height: 1.3;
+                margin-bottom: 1px;
             }
 
-            .achievements { padding: 3px 8px; margin-top: 3px; }
-            .achievements-title { font-size: 5.5px; margin-bottom: 1px; }
-            .achievements li { font-size: 7px; line-height: 1.2; }
-
-            .tools-row { font-size: 6.5px; margin-top: 2px; }
-
-            .edu-degree { font-size: 9px; }
-            .edu-field { font-size: 8px; }
-            .edu-meta { font-size: 7.5px; }
-
-            .award-item { font-size: 7.5px; }
-
-            .exp-entry, .edu-entry { break-inside: avoid; page-break-inside: avoid; }
+            .exp-entry { break-inside: avoid; page-break-inside: avoid; }
         }
     </style>
 </head>
@@ -325,62 +308,75 @@
 
     <div class="resume">
 
-        <!-- ===== HEADER ===== -->
-        <header class="header">
-            <h1>Mathivanan A</h1>
-            <div class="header-title">Founding SDET · Lead SDET</div>
-            <div class="contact-row">
-                <span>Bengaluru</span>
-                <span class="divider">|</span>
-                <span>mathi.bala0102@gmail.com</span>
-                <span class="divider">|</span>
-                <a href="https://linkedin.com/in/mathivanan" target="_blank">LinkedIn</a>
-                <span class="divider">|</span>
-                <a href="https://github.com/mathivanan" target="_blank">GitHub</a>
+        <!-- ===== LEFT SIDEBAR ===== -->
+        <aside class="sidebar">
+
+            <div class="sidebar-initials">M A</div>
+            <div class="sidebar-name">MATHIVANAN A</div>
+            <div class="sidebar-title">Founding SDET · Lead SDET</div>
+
+            <div class="sidebar-contact">
+                Bangalore, Karnataka 560100<br>
+                <a href="mailto:mathi.bala0102@gmail.com">mathi.bala0102@gmail.com</a><br>
+                <a href="https://linkedin.com/in/mathivanan" target="_blank">LinkedIn</a> · <a href="https://github.com/mathivanan" target="_blank">GitHub</a>
             </div>
-        </header>
 
-        <!-- ===== PROFESSIONAL SUMMARY ===== -->
-        <section>
             <h2>Professional Summary</h2>
-            <p class="summary">
-                Founding SDET and QA Leader with <strong>10+ years</strong> of experience across <strong>Banking, FinTech, Telecom, and Startup</strong> domains. Built the entire QA function from the ground up at a fast-scaling startup. Expert in building automation frameworks from scratch using <strong>Playwright, Appium, and RestAssured</strong> — powered by <strong>AI tools (Gemini, Claude Opus, Claude Sonnet, Antigravity)</strong>. Proven track record in <strong>Web, Mobile (Android & iOS), API, Performance, and Database Testing</strong>. Skilled in CI/CD pipeline setup with Jenkins, cross-browser testing with Selenium Grid, and data-driven QA using analytics tools like Mixpanel and CleverTap. Passionate about leveraging AI to accelerate test design, execution, and quality delivery at scale.
+            <p class="sidebar-summary">
+                A result-oriented professional with <strong>10+ years</strong> of qualitative experience in Information Technology and Team Management. Experience across <strong>Banking, Telecom, FinTech</strong> and Startup domains. Expert in building automation frameworks from scratch using <strong>Playwright, Appium, and RestAssured</strong> — powered by <strong>Gemini AI, Claude Opus/Sonnet</strong>, and <strong>Antigravity IDE</strong>.
             </p>
-        </section>
 
-        <!-- ===== WORK EXPERIENCE ===== -->
-        <section>
-            <h2>Work Experience</h2>
+            <h2>Skill Profile</h2>
+            <div class="skill-item">Java, GIT, Selenium</div>
+            <div class="skill-item">JIRA, Scrum, Maven</div>
+            <div class="skill-item">Agile Methodology</div>
+            <div class="skill-item">Jenkins CI/CD</div>
+            <div class="skill-item">Postman, Azure</div>
+            <div class="skill-item">Playwright, Antigravity IDE</div>
+            <div class="skill-item">Cucumber, RestAssured</div>
+            <div class="skill-item">Regression & Automation Testing</div>
+            <div class="skill-item">Automation Framework (POM)</div>
+            <div class="skill-item">Appium Mobile Testing</div>
+            <div class="skill-item">API Testing (Postman, RestAssured)</div>
+            <div class="skill-item">Mobile Testing (Android, iOS)</div>
+            <div class="skill-item">AI: Gemini, Claude Opus, Sonnet</div>
+            <div class="skill-item">Performance: JMeter, NeoLoad</div>
+            <div class="skill-item">DB: pgAdmin, DynamoDB, ClickHouse</div>
+            <div class="skill-item">Analytics: Mixpanel, Firebase, CleverTap, Meta Pixel</div>
+
+            <h2>Education</h2>
+            <div class="edu-degree-s">Master of Technology</div>
+            <div class="edu-field-s">Computer Science</div>
+            <div class="edu-school-s">Vellore Institute of Technology (VIT) — Vellore, India</div>
+
+            <h2>Extra-Curricular</h2>
+            <p class="award-text">🏅 <strong>President's Award</strong> (Rashtrapati Award) winner in Scouting.</p>
+        </aside>
+
+        <!-- ===== RIGHT MAIN ===== -->
+        <main class="main">
+
+            <h2>Experience</h2>
 
             <!-- PICE -->
             <div class="exp-entry">
                 <div class="exp-header">
                     <h3>Founding SDET | Lead SDET</h3>
-                    <span class="exp-date">07/2022 – Present</span>
+                    <span class="exp-date">07/2022 – Current</span>
                 </div>
                 <div class="exp-company">PICE</div>
-                <div class="exp-location">Bengaluru</div>
-                <span class="exp-domain">FinTech · Payments · Startup</span>
                 <ul>
-                    <li>Joined as <strong>Founding SDET</strong>, instrumental in setting up the entire QA function from the ground up for a fast-scaling startup</li>
+                    <li>Joined as the <strong>Founding SDET</strong>, instrumental in setting up the entire QA function from the ground up for a fast-scaling startup</li>
+                    <li>Defined and implemented the overall <strong>QA strategy, processes, and tooling</strong> for web, mobile (Android & iOS), and API platforms</li>
                     <li>Built <strong>Playwright Web Automation Framework from scratch</strong> using <strong>Antigravity IDE</strong>, powered by <strong>Gemini AI, Claude Opus, and Claude Sonnet</strong> for intelligent test generation and framework design</li>
-                    <li>Built <strong>Appium Mobile Automation Framework</strong> for end-to-end testing on <strong>Android & iOS</strong> apps with BrowserStack integration</li>
+                    <li>Built <strong>Appium Mobile Automation Framework</strong> for end-to-end testing on <strong>Android & iOS</strong> apps, leveraging BrowserStack for parallel device execution</li>
                     <li>Built <strong>RestAssured API Automation Framework</strong> for comprehensive backend validation across <strong>50+ API endpoints</strong></li>
                     <li>Designed <strong>performance testing plans using NeoLoad and JMeter</strong>, identifying system bottlenecks and improving load tolerance by <strong>50%</strong></li>
-                    <li>Integrated user analytics tools — <strong>Mixpanel, WebEngage</strong> — for data-driven QA prioritization and event validation</li>
-                    <li>Utilized <strong>pgAdmin for database validation</strong>, Metabase for dashboard testing, and <strong>ClickHouse</strong> for data integrity verification</li>
-                    <li>Worked with backend and DevOps teams to validate <strong>AWS DynamoDB, SQS, and Cloudflare</strong> for security and performance optimizations</li>
-                    <li>Led test planning — Sanity Testing, UAT, and Regression to ensure product readiness across every release</li>
+                    <li>Integrated user analytics — <strong>Mixpanel, WebEngage</strong> — for data-driven QA prioritization</li>
+                    <li>Utilized <strong>pgAdmin</strong> for database validation, <strong>Metabase</strong> for dashboard testing, and <strong>ClickHouse</strong> for data integrity</li>
+                    <li>Validated <strong>AWS DynamoDB, SQS, and Cloudflare</strong> with backend and DevOps teams for security and performance</li>
+                    <li>Led test planning and execution — Sanity Testing, UAT, and Regression for every release</li>
                 </ul>
-                <div class="achievements">
-                    <div class="achievements-title">Key Achievements</div>
-                    <ul>
-                        <li>Built <strong>3 automation frameworks from scratch</strong> — Playwright (Web), RestAssured (API), Appium (Mobile) — all AI-assisted</li>
-                        <li>Improved system load tolerance by <strong>50%</strong> through performance testing and bottleneck identification</li>
-                        <li>Established entire QA function as <strong>Founding SDET</strong> — processes, tooling, automation, and team</li>
-                    </ul>
-                </div>
-                <div class="tools-row"><span class="tools-label">Tools: </span>Playwright, Appium, RestAssured, Java, Antigravity IDE, Gemini AI, Claude Opus/Sonnet, BrowserStack, JMeter, NeoLoad, Mixpanel, pgAdmin, ClickHouse, AWS DynamoDB, SQS, Cloudflare, JIRA</div>
             </div>
 
             <!-- ClearTax -->
@@ -389,17 +385,13 @@
                     <h3>Founding QA | Senior QA (Lead)</h3>
                     <span class="exp-date">01/2018 – 07/2022</span>
                 </div>
-                <div class="exp-company">ClearTax (Clear)</div>
-                <div class="exp-location">Bengaluru</div>
-                <span class="exp-domain">FinTech · Tax Compliance</span>
+                <div class="exp-company">ClearTax</div>
                 <ul>
                     <li>Designed and guided development of <strong>automated and manual test suites</strong> using HP ALM and Selenium</li>
                     <li>Spearheaded <strong>cross-browser and parallel testing</strong> using TestNG and Maven with <strong>Selenium GRID</strong> across Chrome, Firefox, and Safari</li>
-                    <li>Led <strong>CI/CD pipeline setup</strong> by configuring Jenkins master and agents, installing critical plugins, and optimizing scalability</li>
-                    <li>Created detailed test plans and executed Sanity, UAT, Regression, and Smoke testing for every release cycle</li>
-                    <li>Defined QA strategy and tooling for web and API platforms across multiple product verticals</li>
+                    <li>Led the <strong>CI/CD pipeline setup</strong> — configuring Jenkins master and agents, installing plugins, and optimizing scalability</li>
+                    <li>Created detailed test plans and executed Sanity, UAT, Regression, and Smoke testing</li>
                 </ul>
-                <div class="tools-row"><span class="tools-label">Tools: </span>Java, Selenium, Selenium GRID, TestNG, Maven, Jenkins, HP ALM, JIRA, CI/CD</div>
             </div>
 
             <!-- IBM -->
@@ -409,12 +401,10 @@
                     <span class="exp-date">05/2017 – 11/2017</span>
                 </div>
                 <div class="exp-company">IBM (Bell Canada)</div>
-                <div class="exp-location">Bengaluru</div>
-                <span class="exp-domain">Telecom</span>
                 <ul>
-                    <li>Requirement analysis for new enhancements, identifying all possible test scenarios for business functionality</li>
+                    <li>Requirement analysis for new enhancements, identifying all possible test scenarios</li>
                     <li>Writing <strong>Automation TestCases in Java (Selenium)</strong> for web service oriented modules</li>
-                    <li>Effort estimation for test designing, test execution, and test automation for project planning</li>
+                    <li>Effort estimation for test designing, execution, and automation for project planning</li>
                 </ul>
             </div>
 
@@ -425,51 +415,14 @@
                     <span class="exp-date">01/2016 – 05/2017</span>
                 </div>
                 <div class="exp-company">Smartrip</div>
-                <div class="exp-location">Bengaluru</div>
-                <span class="exp-domain">Travel · Enterprise</span>
                 <ul>
-                    <li>Analyzed business problems and estimated feasibility of <strong>automation solutions</strong></li>
+                    <li>Analyzed business problems and estimated <strong>feasibility of automation</strong> solutions</li>
                     <li>Developed scripts to ease process flow for business operations</li>
-                    <li>Scheduled script execution using <strong>Jenkins</strong> to clear claims backlog on a daily basis</li>
-                    <li>Developed test cases and performed functional, regression, and adhoc testing</li>
+                    <li>Scheduled script execution using <strong>Jenkins</strong> to clear claims backlog daily</li>
                 </ul>
             </div>
 
-        </section>
-
-        <!-- ===== SKILL PROFILE ===== -->
-        <section>
-            <h2>Skill Profile</h2>
-            <div class="skills-grid">
-                <div class="skill-row"><span class="skill-label">Automation:</span> <span class="skill-value">Playwright, Selenium WebDriver, Selenium GRID, Appium, Cucumber, TestNG, Maven</span></div>
-                <div class="skill-row"><span class="skill-label">API Testing:</span> <span class="skill-value">RestAssured, Postman, Swagger</span></div>
-                <div class="skill-row"><span class="skill-label">Programming:</span> <span class="skill-value">Java</span></div>
-                <div class="skill-row"><span class="skill-label">AI & Tools:</span> <span class="skill-value">Gemini AI, Claude Opus, Claude Sonnet, Antigravity IDE, GitHub Copilot</span></div>
-                <div class="skill-row"><span class="skill-label">Mobile Testing:</span> <span class="skill-value">Appium, BrowserStack, Android, iOS</span></div>
-                <div class="skill-row"><span class="skill-label">Performance:</span> <span class="skill-value">JMeter, NeoLoad, Load Testing, Stress Testing</span></div>
-                <div class="skill-row"><span class="skill-label">CI/CD & DevOps:</span> <span class="skill-value">Jenkins, CI/CD Pipeline, Git, Azure</span></div>
-                <div class="skill-row"><span class="skill-label">Databases:</span> <span class="skill-value">pgAdmin, DynamoDB, ClickHouse, PostgreSQL</span></div>
-                <div class="skill-row"><span class="skill-label">Analytics:</span> <span class="skill-value">Mixpanel, Firebase, CleverTap, Meta Pixel, WebEngage</span></div>
-                <div class="skill-row"><span class="skill-label">Cloud & Infra:</span> <span class="skill-value">AWS (DynamoDB, SQS), Cloudflare, Metabase</span></div>
-                <div class="skill-row"><span class="skill-label">Methodologies:</span> <span class="skill-value">Agile Scrum, BDD, Regression, UAT, Sanity, Smoke Testing</span></div>
-                <div class="skill-row"><span class="skill-label">Tools:</span> <span class="skill-value">JIRA, HP ALM, Confluence, Git</span></div>
-            </div>
-        </section>
-
-        <!-- ===== EDUCATION ===== -->
-        <section>
-            <h2>Education</h2>
-            <div class="edu-entry">
-                <div class="edu-degree">Master of Technology</div>
-                <div class="edu-field">Computer Science — Vellore Institute of Technology (VIT), Vellore</div>
-            </div>
-        </section>
-
-        <!-- ===== RECOGNITION ===== -->
-        <section>
-            <h2>Recognition</h2>
-            <p class="award-item">🏅 <strong>President's Award (Rashtrapati Award)</strong> — Scouting</p>
-        </section>
+        </main>
 
     </div>
 
