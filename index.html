@@ -212,9 +212,24 @@
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
-            .resume { grid-template-columns: 1fr; }
-            .sidebar { padding: 24px 20px; }
-            .main { padding: 24px 20px; }
+            body { padding: 8px; }
+            .resume {
+                grid-template-columns: 1fr;
+                height: auto;
+                min-height: auto;
+                overflow: visible;
+            }
+            .sidebar {
+                padding: 24px 20px;
+                height: auto;
+                overflow: visible;
+            }
+            .main {
+                padding: 24px 20px;
+                height: auto;
+                overflow: visible;
+            }
+            .exp-entry { break-inside: auto; }
         }
 
         /* ===== Print Styles ===== */
