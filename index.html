@@ -117,22 +117,40 @@
         .sidebar-summary strong { color: #ffffff; }
 
         /* Skills */
+        .skill-group {
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .skill-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .skill-label {
+            font-size: 9px;
+            font-weight: 800;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
+
+        .skill-tools {
+            font-size: 10px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        /* Legacy skill-item kept for print compat */
         .skill-item {
             font-size: 10.5px;
             color: #cbd5e1;
             margin-bottom: 3px;
             line-height: 1.45;
-            display: flex;
-            align-items: flex-start;
-            gap: 6px;
-        }
-
-        .skill-item::before {
-            content: '●';
-            color: #60a5fa;
-            font-size: 7px;
-            margin-top: 3px;
-            flex-shrink: 0;
+            display: none;
         }
 
         /* Education */
@@ -282,8 +300,9 @@
             }
 
             .sidebar-summary { font-size: 9.5px; line-height: 1.6; }
-            .skill-item { font-size: 9.5px; margin-bottom: 4px; line-height: 1.5; }
-            .skill-item::before { font-size: 6px; }
+            .skill-group { margin-bottom: 6px; padding-bottom: 4px; }
+            .skill-label { font-size: 7px; margin-bottom: 1px; letter-spacing: 0.8px; }
+            .skill-tools { font-size: 8px; line-height: 1.35; }
             .edu-degree-s { font-size: 11px; margin-top: 2px; }
             .edu-field-s { font-size: 9.5px; }
             .edu-school-s { font-size: 9px; }
@@ -367,13 +386,41 @@
             <div class="edu-school-s">Vellore Institute of Technology (VIT) — Vellore, India</div>
 
             <h2>Skill Profile</h2>
-            <div class="skill-item"><strong>Test Management:</strong> JIRA, TestRail, Zoho Test Management, qTest, Xray for Jira, Azure Test Plans, PractiTest, HP ALM, TestLink</div>
-            <div class="skill-item"><strong>AI Testing:</strong> ChatGPT, GitHub Copilot, Claude, Gemini, Antigravity IDE, Testim, Applitools, LangChain, OpenAI API</div>
-            <div class="skill-item"><strong>Database:</strong> PostgreSQL, MongoDB, MySQL, Oracle DB, SQLite, Cassandra, Firebase Realtime Database</div>
-            <div class="skill-item"><strong>API Testing:</strong> Postman, Swagger UI, SoapUI, RestAssured, Katalon Studio, Apigee, Insomnia, Karate</div>
-            <div class="skill-item"><strong>Debugging:</strong> Charles Proxy, Android Studio Debugger, Xcode, Logcat, DevTools (Chrome/Firefox)</div>
-            <div class="skill-item"><strong>Performance:</strong> Apache JMeter, LoadRunner, Gatling, k6, NeoLoad, WebLOAD, Locust</div>
-            <div class="skill-item"><strong>Mobile Testing:</strong> Android Studio, BrowserStack, LambdaTest, TestFlight, Sauce Labs, Firebase Test Lab, Perfecto Mobile</div>
+
+            <div class="skill-group">
+                <div class="skill-label">Test Management</div>
+                <div class="skill-tools">JIRA, TestRail, Zoho Test Management, qTest, Xray for Jira, Azure Test Plans, PractiTest, HP ALM, TestLink</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-label">AI Testing Tools</div>
+                <div class="skill-tools">ChatGPT, GitHub Copilot, Claude, Gemini, Antigravity IDE, Testim, Applitools, LangChain, OpenAI API</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-label">Database</div>
+                <div class="skill-tools">PostgreSQL, MongoDB, MySQL, Oracle DB, SQLite, Cassandra, Firebase Realtime Database</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-label">API Testing</div>
+                <div class="skill-tools">Postman, Swagger UI, SoapUI, RestAssured, Katalon Studio, Apigee, Insomnia, Karate</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-label">Debugging</div>
+                <div class="skill-tools">Charles Proxy, Android Studio Debugger, Xcode, Logcat, DevTools (Chrome/Firefox)</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-label">Performance</div>
+                <div class="skill-tools">Apache JMeter, LoadRunner, Gatling, k6, NeoLoad, WebLOAD, Locust</div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-label">Mobile Testing</div>
+                <div class="skill-tools">Android Studio, BrowserStack, LambdaTest, TestFlight, Sauce Labs, Firebase Test Lab, Perfecto Mobile</div>
+            </div>
         </aside>
 
         <!-- ===== RIGHT MAIN ===== -->
