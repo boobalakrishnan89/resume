@@ -284,84 +284,113 @@
         /* ===== Print Styles — Single Page A4 ===== */
         @media print {
             @page {
-                margin: 0.2in 0.3in;
+                margin: 0.15in 0.25in;
                 size: A4;
             }
 
-            * { animation: none !important; transition: none !important; }
+            * {
+                animation: none !important;
+                transition: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
 
             html, body {
-                height: auto !important;
-                min-height: 0 !important;
+                width: 210mm;
+                height: 297mm;
                 margin: 0 !important;
                 padding: 0 !important;
                 background: white;
+                overflow: hidden;
             }
 
-            body { font-size: 8px; }
+            body { font-size: 7.5px; }
 
             .print-controls { display: none !important; }
 
             .resume {
                 max-width: 100%;
+                width: 210mm;
+                height: 297mm;
                 padding: 0;
                 box-shadow: none;
                 margin: 0;
+                overflow: hidden;
             }
 
+            /* Header */
             .header {
-                margin-bottom: 6px;
-                padding-bottom: 5px;
-            }
-
-            h1 { font-size: 16px; margin-bottom: 2px; }
-            .header-title { font-size: 9px; margin-bottom: 5px; }
-            .contact-row { font-size: 8px; gap: 3px 10px; }
-
-            h2 {
-                font-size: 8px;
-                margin-top: 6px;
-                margin-bottom: 3px;
-                padding-bottom: 2px;
-                letter-spacing: 2px;
-            }
-
-            .summary { font-size: 8px; line-height: 1.4; margin-bottom: 0; }
-
-            .skills-grid { gap: 1px 16px; }
-            .skill-row { font-size: 8px; line-height: 1.4; }
-
-            .exp-entry {
-                margin-bottom: 5px;
+                margin-bottom: 4px;
                 padding-bottom: 4px;
             }
 
-            h3 { font-size: 9.5px; }
-            .exp-date { font-size: 7.5px; }
-            .exp-company { font-size: 8.5px; }
-            .exp-location { font-size: 7px; margin-bottom: 1px; }
-            .exp-domain { font-size: 6.5px; padding: 1px 4px; margin-bottom: 2px; }
+            h1 { font-size: 15px; margin-bottom: 1px; }
+            .header-title { font-size: 8.5px; margin-bottom: 4px; }
+            .contact-row { font-size: 7.5px; gap: 2px 8px; }
 
-            ul { padding-left: 14px; }
+            /* Section headings */
+            h2 {
+                font-size: 7.5px;
+                margin-top: 5px;
+                margin-bottom: 2px;
+                padding-bottom: 1.5px;
+                letter-spacing: 1.8px;
+                border-bottom-width: 1px;
+            }
+
+            /* Summary */
+            .summary { font-size: 7.5px; line-height: 1.35; margin-bottom: 0; }
+
+            /* Skills */
+            .skills-grid { gap: 0px 14px; }
+            .skill-row { font-size: 7.5px; line-height: 1.3; }
+
+            /* Experience entries */
+            .exp-entry {
+                margin-bottom: 3px;
+                padding-bottom: 3px;
+            }
+
+            .exp-entry:last-child {
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            h3 { font-size: 9px; }
+            .exp-date { font-size: 7px; }
+            .exp-company { font-size: 8px; margin-bottom: 0; }
+            .exp-location { font-size: 6.5px; margin-bottom: 1px; }
+            .exp-domain { font-size: 6px; padding: 1px 4px; margin-bottom: 1px; }
+
+            ul { padding-left: 12px; }
 
             li {
-                font-size: 7.5px;
-                line-height: 1.25;
+                font-size: 7px;
+                line-height: 1.2;
                 margin-bottom: 0;
             }
 
-            .achievements { padding: 2px 7px; margin-top: 2px; }
-            .achievements-title { font-size: 6px; margin-bottom: 1px; }
-            .achievements li { font-size: 7px; line-height: 1.2; }
+            li strong { font-weight: 800; }
 
-            .tools-row { font-size: 6.5px; margin-top: 1px; }
+            /* Achievements box */
+            .achievements { padding: 2px 6px; margin-top: 1px; border-left-width: 2px; }
+            .achievements-title { font-size: 5.5px; margin-bottom: 1px; }
+            .achievements li { font-size: 6.5px; line-height: 1.15; }
 
-            .edu-entry { margin-bottom: 3px; }
-            .edu-degree { font-size: 9px; }
-            .edu-field { font-size: 8px; }
-            .edu-meta { font-size: 7.5px; }
+            .tools-row { font-size: 6px; margin-top: 1px; }
 
-            .exp-entry, .edu-entry { break-inside: avoid; page-break-inside: avoid; }
+            /* Education */
+            .edu-entry { margin-bottom: 2px; }
+            .edu-degree { font-size: 8.5px; }
+            .edu-field { font-size: 7.5px; }
+            .edu-meta { font-size: 7px; }
+
+            /* Prevent page breaks */
+            .resume, section, .exp-entry, .edu-entry {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
         }
     </style>
 </head>
