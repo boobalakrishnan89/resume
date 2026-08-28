@@ -271,8 +271,8 @@
             color: #2563eb;
         }
 
-        /* ===== Responsive ===== */
-        @media (max-width: 768px) {
+        /* ===== Responsive (screen only) ===== */
+        @media screen and (max-width: 768px) {
             body { padding: 10px 6px; }
             .resume { padding: 24px 20px; }
             h1 { font-size: 22px; }
@@ -284,7 +284,7 @@
         /* ===== Print Styles — Single Page A4 ===== */
         @media print {
             @page {
-                margin: 0.15in 0.25in;
+                margin: 0.25in 0.35in;
                 size: A4;
             }
 
@@ -302,94 +302,221 @@
                 padding: 0 !important;
                 background: white;
                 overflow: hidden;
+                font-family: Arial, Helvetica, sans-serif !important;
             }
-
-            body { font-size: 7.5px; }
 
             .print-controls { display: none !important; }
 
             .resume {
                 max-width: 100%;
-                width: 210mm;
-                height: 297mm;
+                width: 100%;
                 padding: 0;
                 box-shadow: none;
                 margin: 0;
                 overflow: hidden;
+                font-family: Arial, Helvetica, sans-serif !important;
             }
 
-            /* Header */
+            /* --- Header --- */
             .header {
-                margin-bottom: 4px;
-                padding-bottom: 4px;
+                text-align: center;
+                margin-bottom: 5px;
+                padding-bottom: 5px;
+                border-bottom: 2px solid #1a1a1a;
             }
 
-            h1 { font-size: 15px; margin-bottom: 1px; }
-            .header-title { font-size: 8.5px; margin-bottom: 4px; }
-            .contact-row { font-size: 7.5px; gap: 2px 8px; }
-
-            /* Section headings */
-            h2 {
-                font-size: 7.5px;
-                margin-top: 5px;
+            h1 {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 17px;
+                font-weight: 700;
+                letter-spacing: 1px;
                 margin-bottom: 2px;
-                padding-bottom: 1.5px;
-                letter-spacing: 1.8px;
-                border-bottom-width: 1px;
             }
 
-            /* Summary */
-            .summary { font-size: 7.5px; line-height: 1.35; margin-bottom: 0; }
+            .header-title {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 9.5px;
+                font-weight: 600;
+                margin-bottom: 4px;
+            }
 
-            /* Skills */
-            .skills-grid { gap: 0px 14px; }
-            .skill-row { font-size: 7.5px; line-height: 1.3; }
+            .contact-row {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 8px;
+                gap: 0 6px;
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: nowrap !important;
+                justify-content: center !important;
+                align-items: center !important;
+                white-space: nowrap;
+            }
 
-            /* Experience entries */
-            .exp-entry {
+            .contact-row span,
+            .contact-row a {
+                display: inline !important;
+                white-space: nowrap;
+                font-family: Arial, Helvetica, sans-serif !important;
+            }
+
+            .divider { color: #999; margin: 0 2px; }
+
+            /* --- Section Headings --- */
+            h2 {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 8.5px;
+                font-weight: 700;
+                margin-top: 6px;
                 margin-bottom: 3px;
-                padding-bottom: 3px;
+                padding-bottom: 2px;
+                letter-spacing: 2px;
+                border-bottom: 1.5px solid #1a1a1a;
+            }
+
+            /* --- Summary --- */
+            .summary {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 8px;
+                line-height: 1.4;
+                margin-bottom: 0;
+                font-weight: 400;
+            }
+
+            .summary strong { font-weight: 700; }
+
+            /* --- Skills Grid --- */
+            .skills-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1px 20px;
+            }
+
+            .skill-row {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 8px;
+                line-height: 1.4;
+            }
+
+            .skill-label { font-weight: 700; }
+            .skill-value { font-weight: 400; }
+
+            /* --- Experience --- */
+            .exp-entry {
+                margin-bottom: 5px;
+                padding-bottom: 4px;
+                border-bottom: 1px solid #e5e5e5;
             }
 
             .exp-entry:last-child {
                 margin-bottom: 0;
                 padding-bottom: 0;
+                border-bottom: none;
             }
 
-            h3 { font-size: 9px; }
-            .exp-date { font-size: 7px; }
-            .exp-company { font-size: 8px; margin-bottom: 0; }
-            .exp-location { font-size: 6.5px; margin-bottom: 1px; }
-            .exp-domain { font-size: 6px; padding: 1px 4px; margin-bottom: 1px; }
+            .exp-header {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                align-items: baseline !important;
+                flex-wrap: nowrap !important;
+            }
 
-            ul { padding-left: 12px; }
+            h3 {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 10px;
+                font-weight: 700;
+            }
 
-            li {
-                font-size: 7px;
-                line-height: 1.2;
+            .exp-date {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 8px;
+                font-weight: 600;
+                white-space: nowrap;
+            }
+
+            .exp-company {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 8.5px;
+                font-weight: 600;
                 margin-bottom: 0;
             }
 
-            li strong { font-weight: 800; }
+            .exp-location {
+                font-size: 7px;
+                margin-bottom: 1px;
+            }
 
-            /* Achievements box */
-            .achievements { padding: 2px 6px; margin-top: 1px; border-left-width: 2px; }
-            .achievements-title { font-size: 5.5px; margin-bottom: 1px; }
-            .achievements li { font-size: 6.5px; line-height: 1.15; }
+            .exp-domain {
+                font-size: 6.5px;
+                font-weight: 600;
+                padding: 1px 4px;
+                margin-bottom: 2px;
+            }
 
-            .tools-row { font-size: 6px; margin-top: 1px; }
+            ul { padding-left: 14px; }
 
-            /* Education */
-            .edu-entry { margin-bottom: 2px; }
-            .edu-degree { font-size: 8.5px; }
-            .edu-field { font-size: 7.5px; }
-            .edu-meta { font-size: 7px; }
+            li {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 7.5px;
+                line-height: 1.3;
+                margin-bottom: 0.5px;
+                font-weight: 400;
+            }
 
-            /* Prevent page breaks */
+            li strong { font-weight: 700; }
+
+            /* --- Achievements --- */
+            .achievements {
+                padding: 3px 8px;
+                margin-top: 2px;
+                border-left: 2px solid #2563eb;
+            }
+
+            .achievements-title {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 6.5px;
+                font-weight: 700;
+                margin-bottom: 1px;
+            }
+
+            .achievements li {
+                font-size: 7px;
+                line-height: 1.25;
+            }
+
+            .tools-row {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 7px;
+                margin-top: 2px;
+                font-weight: 400;
+            }
+
+            .tools-label { font-weight: 700; }
+
+            /* --- Education --- */
+            .edu-entry { margin-bottom: 3px; }
+
+            .edu-degree {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 9px;
+                font-weight: 700;
+            }
+
+            .edu-field {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 8px;
+                font-weight: 400;
+            }
+
+            .edu-meta {
+                font-family: Arial, Helvetica, sans-serif !important;
+                font-size: 7.5px;
+            }
+
+            /* --- Prevent page breaks --- */
             .resume, section, .exp-entry, .edu-entry {
                 break-inside: avoid;
                 page-break-inside: avoid;
-                page-break-after: auto;
             }
         }
     </style>
@@ -443,7 +570,7 @@
                 <div class="skill-row"><span class="skill-label">Database:</span> <span class="skill-value">MongoDB, MySQL, PostgreSQL</span></div>
                 <div class="skill-row"><span class="skill-label">Debugging:</span> <span class="skill-value">Proxyman, DevTools (Chrome/Firefox), Kibana Logs, CleverTap, Loggly</span></div>
                 <div class="skill-row"><span class="skill-label">Mobile Testing:</span> <span class="skill-value">Android Studio, BrowserStack, TestFlight</span></div>
-                <div class="skill-row"><span class="skill-label">Cloud & Infra:</span> <span class="skill-value">AWS, GitHub, Eclipse IDE, Antigravity, Antigravity IDE</span></div>
+                <div class="skill-row"><span class="skill-label">Cloud &amp; Infra:</span> <span class="skill-value">AWS, GitHub, Eclipse IDE, Antigravity, Antigravity IDE</span></div>
             </div>
         </section>
 
@@ -462,7 +589,7 @@
                 <span class="exp-domain">Health Insurance · Employee Benefits</span>
                 <ul>
                     <li>Lead and mentor 8 QA engineers to drive quality standards across all product verticals</li>
-                    <li>Built <strong>Web + API Automation Framework</strong> from scratch using <strong>Playwright & RestAssured</strong></li>
+                    <li>Built <strong>Web + API Automation Framework</strong> from scratch using <strong>Playwright &amp; RestAssured</strong></li>
                     <li>Built <strong>Appium Framework</strong> for mobile app automation on Android</li>
                     <li>Introduced end-to-end <strong>AI-powered QA process</strong> for test design and sign-off</li>
                     <li>Leveraged AI for <strong>automated test case generation</strong>, bug analysis, and intelligent reporting</li>
@@ -501,7 +628,7 @@
                     <li>Automated merchant integration and payment transaction screen validations</li>
                     <li>Performed functional, regression, adhoc, and re-testing across web and mobile</li>
                     <li>Conducted mobile application testing using <strong>BrowserStack</strong> and real-time devices</li>
-                    <li>Gathered requirements from Product & Design teams for test strategy creation</li>
+                    <li>Gathered requirements from Product &amp; Design teams for test strategy creation</li>
                     <li>Tracked and logged defects in JIRA with detailed reproduction steps</li>
                 </ul>
                 <div class="tools-row"><span class="tools-label">Tools: </span>Java, Selenium, Automation Framework, JIRA, CleverTap, Loggly, BrowserStack</div>
